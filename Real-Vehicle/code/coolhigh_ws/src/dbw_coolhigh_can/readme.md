@@ -1,1 +1,0 @@
-这里定义了coolhigh底盘的drive-by-wire

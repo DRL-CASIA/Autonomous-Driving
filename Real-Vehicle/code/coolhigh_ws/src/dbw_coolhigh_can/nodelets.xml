@@ -1,9 +1,0 @@
-<library path="lib/libdbw_pacifica_can">
-  <class name="dbw_pacifica_can/CanNodelet"
-         type="dbw_pacifica_can::CanNodelet"
-         base_class_type="nodelet::Nodelet">
-    <description>
-      Chrysler Pacifica drive-by-wire nodelet
-    </description>
-  </class>
-</library>
