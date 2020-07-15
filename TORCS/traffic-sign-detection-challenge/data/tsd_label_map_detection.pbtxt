@@ -1,0 +1,29 @@
+item {
+  id: 1
+  name: 'red'
+  display_name: 'Prohibition'
+}
+
+item {
+  id: 2
+  name: 'blue'
+  display_name: 'Illustration'
+}
+
+item {
+  id: 3
+  name: 'yellow'
+  display_name: 'Warning'
+}
+
+item {
+  id: 4
+  name: 'light'
+  display_name: 'Light'
+}
+
+item {
+  id: 5
+  name: 'arrow'
+  display_name: 'Arrow'
+}

@@ -1,0 +1,20 @@
+
+# Episode: 0 start
+# step: 86 reward: 2964.270187 
+
+# Episode: 1 start
+# step: 142 reward: 5761.971776 
+
+# Episode: 2 start
+Timeout for client answer
+# step: 201 reward: 8381.437927 
+
+# Episode: 3 start
+# step: 792 reward: 36697.381844
+
+# Episode: 4 start
+# step: 407 reward: 18091.861889 
+
+# Episode: 5 start
+Timeout for client answer
+# step: 4999 reward: 238245.619215

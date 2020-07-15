@@ -1,0 +1,19 @@
+;
+;   file                 : pid_bot.def
+;   created              : Wed Dec 6 00:17:12 CST 2017
+;   copyright            : (C) 2002 lidong
+;
+;
+;    This program is free software; you can redistribute it and/or modify
+;    it under the terms of the GNU General Public License as published by
+;    the Free Software Foundation; either version 2 of the License, or   
+;    (at your option) any later version.                                 
+;
+
+LIBRARY	pid_bot
+
+SECTIONS .data READ WRITE
+
+EXPORTS
+	pid_bot
+
