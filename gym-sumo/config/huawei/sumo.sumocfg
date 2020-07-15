@@ -1,0 +1,37 @@
+<configuration>
+
+    <input>
+      <net-file value="sumo.net.xml"/>
+      <route-files value="sumo_dense2.rou.xml"/>
+      <additional-files value=""/>      
+      <gui-settings-file value="sumo.settings.xml"/>
+      <junction-files value=""/>
+    </input>
+<!--
+    <output>
+      <netstate-dump value="ex_sumo.sumo.tr"/>
+      <tripinfo-output value="output-tripinfos.xml"/>
+      <emission-output value="output-emission.xml"/>
+      <vehroute-output value="output-vehroutes.xml"/>
+      <lanechange-output value="laneChange.xml"/>
+    </output>
+-->
+    <time>
+      <begin value="0"/>
+      <end value="1000000000000000"/>
+      <time-to-teleport value="-1"/>
+      <seed value="23423"/>
+      <route-steps value="-1"/>
+      <step-length value="0.05"/>
+    </time>
+
+    <reports>
+       <print-options value="false"/>
+    </reports>
+    
+    <processing>
+        <no-internal-links value="false"/>
+     <!--   <lanechange.duration value="2"/>  -->
+    </processing>
+
+</configuration>

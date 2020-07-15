@@ -1,0 +1,17 @@
+<launch>
+
+  <node
+      pkg="dbw_coolhigh_can"
+      type="dbw_node"
+      name="dbw"
+      respawn="true"
+      launch-prefix="xterm -e gdb --args"
+      >
+      <param name="dbw_dbc_file" textfile="$(find dbw_coolhigh_can)ch_agv-1.3.62.dbc" />
+      <remap from="can_tx" to="/can_rx" />
+      <remap from="can_rx" to="/can_tx" />
+  </node>
+
+
+
+</launch>

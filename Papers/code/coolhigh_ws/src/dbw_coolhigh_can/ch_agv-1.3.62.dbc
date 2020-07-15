@@ -1,0 +1,218 @@
+VERSION "1"
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: ECU HOST_PC
+
+
+BO_ 272 Throttle_Command: 2 HOST_PC
+ SG_ THROTTLE_PEDAL_EN_CTRL : 0|8@1+ (1,0) [0|1] ""  ECU
+ SG_ THROTTLE_PEDAL_CMD : 8|8@1+ (1,0) [0|100] "%"  ECU
+ 
+BO_ 273 Brake_Command: 2 HOST_PC
+ SG_ BRAKE_PEDAL_EN_CTRL : 0|8@1+ (1,0) [0|1] ""  ECU
+ SG_ BRAKE_PEDAL_CMD : 8|8@1+ (1,0) [0|100] "%"  ECU
+ 
+BO_ 274 Steer_Command: 3 HOST_PC
+ SG_ STEER_ANGLE_EN_CTRL : 0|8@1+ (1,0) [0|1] ""  ECU
+ SG_ STEER_ANGLE_CMD : 8|16@1- (0.001,0) [-0.524|0.524] "radian"  ECU
+ 
+BO_ 275 Turnsignal_Command: 1 HOST_PC
+ SG_ TURN_SIGNAL_CMD : 0|8@1+ (1,0) [0|2] ""  ECU
+ 
+BO_ 276 Gear_Command: 1 HOST_PC
+ SG_ GEAR_CMD : 0|8@1+ (1,0) [1|4] ""  ECU
+ 
+BO_ 277 Control_Command: 1 HOST_PC
+ SG_ CTRL_CMD : 0|8@1+ (1,0) [0|1] ""  ECU
+
+ 
+
+BO_ 1296 Throttle_Status_: 2 ECU
+ SG_ THROTTLE_PEDAL_EN_STS : 0|8@1+ (1,0) [0|1] ""  HOST_PC
+ SG_ THROTTLE_PEDAL_STS : 8|8@1+ (1,0) [0|100] "%"  HOST_PC
+ 
+BO_ 1297 Brake_Status_: 2 ECU
+ SG_ BRAKE_PEDAL_EN_STS : 0|8@1+ (1,0) [0|1] ""  HOST_PC
+ SG_ BRAKE_PEDAL_STS : 8|8@1+ (1,0) [0|100] "%"  HOST_PC
+
+BO_ 1298 Steer_Status_: 3 ECU
+ SG_ STEER_ANGLE_EN_STS : 0|8@1+ (1,0) [0|1] ""  HOST_PC
+ SG_ STEER_ANGLE_STS : 8|16@1- (0.001,0) [-0.524|0.524] "radian"  HOST_PC
+
+BO_ 1299 Turnsignal_Status_: 1 ECU
+ SG_ TURN_SIGNAL_STS : 0|8@1+ (1,0) [0|2] ""  HOST_PC
+
+BO_ 1300 Gear_Status: 1 ECU
+ SG_ GEAR_STS : 0|8@1+ (1,0) [1|4] ""  HOST_PC
+ 
+ 
+BO_ 1301 ECU_Status_1: 8 ECU
+ SG_ SPEED : 0|16@1- (0.01,0) [0|0] "m/s"  HOST_PC
+ SG_ ACC_SPEED : 16|16@1- (0.001,0) [0|0] "m/s^2"  HOST_PC
+ SG_ CTRL_STS : 32|8@1+ (1,0) [0|1] ""  HOST_PC
+ SG_ CHASSIS_STS : 40|8@1+ (1,0) [0|255] ""  HOST_PC
+ SG_ CHASSIS_ERR : 48|16@1+ (1,0) [0|65535] ""  HOST_PC
+
+BO_ 1302 ECU_Status_2: 8 ECU
+ SG_ BATTERY_REMAINING_CAPACITY : 0|16@1+ (1,0) [0|100] "%"  HOST_PC
+ SG_ BATTERY_VOLTAGE : 16|16@1+ (0.1,0) [0|80] "V"  HOST_PC
+ SG_ BATTERY_CURRENT : 32|16@1- (0.1,0) [-60|60] "A"  HOST_PC 
+ SG_ BATTERY_TEMPERATURE : 48|16@1- (1,0) [-40|110] "T"  HOST_PC 
+ 
+BO_ 1303 ECU_Status_3: 8 ECU
+ SG_ ULTRASOUND_DIST_1 : 0|8@1+ (1,0) [0|0] "cm"  HOST_PC
+ SG_ ULTRASOUND_DIST_2 : 8|8@1+ (1,0) [0|0] "cm"  HOST_PC
+ SG_ ULTRASOUND_DIST_3 : 16|8@1+ (1,0) [0|0] "cm"  HOST_PC
+ SG_ ULTRASOUND_DIST_4 : 24|8@1+ (1,0) [0|0] "cm"  HOST_PC
+ SG_ ULTRASOUND_DIST_5 : 32|8@1+ (1,0) [0|0] "cm"  HOST_PC
+ SG_ ULTRASOUND_DIST_6 : 40|8@1+ (1,0) [0|0] "cm"  HOST_PC
+ SG_ ULTRASOUND_DIST_7 : 48|8@1+ (1,0) [0|0] "cm"  HOST_PC
+ SG_ ULTRASOUND_DIST_8 : 56|8@1+ (1,0) [0|0] "cm"  HOST_PC
+
+ 
+CM_ BU_ ECU "Electronic Control Unit (Cool High AGV Chassis)";
+CM_ BU_ HOST_PC "Upper computer (IPC)";
+
+
+CM_ BO_ 272 "Vehicle open-loop control command: THROTTLE_PEDAL_CMD";
+CM_ BO_ 273 "Vehicle open-loop control command: BRAKE_PEDAL_CMD";
+CM_ BO_ 274 "Vehicle open-loop control command: STEER_ANGLE_CMD";
+CM_ BO_ 275 "Vehicle open-loop control command: TURN_SIGNAL_CMD";
+CM_ BO_ 276 "Vehicle open-loop control command: GEAR_CMD";
+CM_ BO_ 277 "Vehicle open-loop control command: CTRL_CMD";
+
+CM_ BO_ 1296 "Vehicle open-loop control status: THROTTLE_PEDAL_STS";
+CM_ BO_ 1297 "Vehicle open-loop control status: BRAKE_PEDAL_STS";
+CM_ BO_ 1298 "Vehicle open-loop control status: STEER_ANGLE_STS";
+CM_ BO_ 1299 "Vehicle open-loop control status: TURN_SIGNAL_STS";
+CM_ BO_ 1300 "Vehicle open-loop control status: GEAR_STS";
+
+CM_ BO_ 1301 "AGV status 1: speed, accelerated speed, out of control, chassis status, chassis error code";
+CM_ BO_ 1302 "AGV status 2: BMS status";
+CM_ BO_ 1303 "AGV status 3: Ultrasound status";
+
+CM_ SG_ 272 THROTTLE_PEDAL_EN_CTRL "throttle pedal enable bit(Command)";
+CM_ SG_ 272 THROTTLE_PEDAL_CMD "Percentage of throttle pedal(Command)";
+CM_ SG_ 273 BRAKE_PEDAL_EN_CTRL "brake pedal enable bit(Command)";
+CM_ SG_ 273 BRAKE_PEDAL_CMD "Percentage of brake pedal(Command)";
+CM_ SG_ 274 STEER_ANGLE_EN_CTRL "steering angle enable bit(Command)";
+CM_ SG_ 274 STEER_ANGLE_CMD "Current steering angle(Command)";
+CM_ SG_ 275 TURN_SIGNAL_CMD "Lighting control(Command)";
+CM_ SG_ 276 GEAR_CMD "PRND control(Command)";
+CM_ SG_ 277 CTRL_CMD "Take control(Command)";
+
+CM_ SG_ 1296 THROTTLE_PEDAL_EN_STS "throttle pedal enable bit(Status)";
+CM_ SG_ 1296 THROTTLE_PEDAL_STS "Percentage of throttle pedal(Status)";
+CM_ SG_ 1297 BRAKE_PEDAL_EN_STS "brake pedal enable bit(Status)";
+CM_ SG_ 1297 BRAKE_PEDAL_STS "Percentage of brake pedal(Status)";
+CM_ SG_ 1298 STEER_ANGLE_EN_STS "steering angle enable bit(Status)";
+CM_ SG_ 1298 STEER_ANGLE_STS "Current steering angle(Status)";
+CM_ SG_ 1299 TURN_SIGNAL_STS "Lighting control(Status)";
+CM_ SG_ 1300 GEAR_STS "PRND control(Status)";
+
+CM_ SG_ 1301 SPEED "Current speed (Steering status)";
+CM_ SG_ 1301 ACC_SPEED "Current acceleration (Steering status)";
+CM_ SG_ 1301 CTRL_STS "Current Auto-mode state (Chassis status)";
+CM_ SG_ 1301 CHASSIS_STS "Current chassis state (Chassis status)";
+CM_ SG_ 1301 CHASSIS_ERR "Chassis error code (Chassis status)";
+
+CM_ SG_ 1302 BATTERY_REMAINING_CAPACITY "Percentage of battery remaining (BMS status)";
+CM_ SG_ 1302 BATTERY_VOLTAGE "Current battery voltage (BMS status)";
+CM_ SG_ 1302 BATTERY_CURRENT "Current battery current (BMS status)";
+CM_ SG_ 1302 BATTERY_TEMPERATURE "Current battery temperature (BMS status)";
+
+CM_ SG_ 1303 ULTRASOUND_DIST_1 "Ultrasonic detection distance 1 (Ultrasound status)";
+CM_ SG_ 1303 ULTRASOUND_DIST_2 "Ultrasonic detection distance 2 (Ultrasound status)";
+CM_ SG_ 1303 ULTRASOUND_DIST_3 "Ultrasonic detection distance 3 (Ultrasound status)";
+CM_ SG_ 1303 ULTRASOUND_DIST_4 "Ultrasonic detection distance 4 (Ultrasound status)";
+CM_ SG_ 1303 ULTRASOUND_DIST_5 "Ultrasonic detection distance 5 (Ultrasound status)";
+CM_ SG_ 1303 ULTRASOUND_DIST_6 "Ultrasonic detection distance 6 (Ultrasound status)";
+CM_ SG_ 1303 ULTRASOUND_DIST_7 "Ultrasonic detection distance 7 (Ultrasound status)";
+CM_ SG_ 1303 ULTRASOUND_DIST_8 "Ultrasonic detection distance 8 (Ultrasound status)";
+
+
+BA_DEF_ BO_  "GenMsgSendType"  ENUM  "FixedPeriodic","NoMsgSendType";
+BA_DEF_ BO_  "GenMsgCycleTime" INT 0 100000;
+BA_DEF_  "NetworkSpeed" ENUM  "500kBits/s";
+BA_DEF_  "BusType" STRING ;
+
+BA_DEF_DEF_  "GenMsgSendType" "NoMsgSendType";
+BA_DEF_DEF_  "GenMsgCycleTime" 0;
+BA_DEF_DEF_  "NetworkSpeed" "500kBits/s";
+BA_DEF_DEF_  "BusType" "CAN";
+
+BA_ "GenMsgSendType" BO_ 272 0;
+BA_ "GenMsgCycleTime" BO_ 272 100;
+BA_ "GenMsgSendType" BO_ 273 0;
+BA_ "GenMsgCycleTime" BO_ 273 100;
+BA_ "GenMsgSendType" BO_ 274 0;
+BA_ "GenMsgCycleTime" BO_ 274 100;
+BA_ "GenMsgSendType" BO_ 275 0;
+BA_ "GenMsgCycleTime" BO_ 275 100;
+BA_ "GenMsgSendType" BO_ 276 0;
+BA_ "GenMsgCycleTime" BO_ 276 100;
+
+BA_ "GenMsgSendType" BO_ 1296 0;
+BA_ "GenMsgCycleTime" BO_ 1296 100;
+BA_ "GenMsgSendType" BO_ 1297 0;
+BA_ "GenMsgCycleTime" BO_ 1297 100;
+BA_ "GenMsgSendType" BO_ 1298 0;
+BA_ "GenMsgCycleTime" BO_ 1298 100;
+BA_ "GenMsgSendType" BO_ 1299 0;
+BA_ "GenMsgCycleTime" BO_ 1299 100;
+BA_ "GenMsgSendType" BO_ 1300 0;
+BA_ "GenMsgCycleTime" BO_ 1300 100;
+
+BA_ "GenMsgSendType" BO_ 1301 0;
+BA_ "GenMsgCycleTime" BO_ 1301 100;
+BA_ "GenMsgSendType" BO_ 1302 0;
+BA_ "GenMsgCycleTime" BO_ 1302 1000;
+BA_ "GenMsgSendType" BO_ 1303 0;
+BA_ "GenMsgCycleTime" BO_ 1303 1000;
+
+VAL_ 272 THROTTLE_PEDAL_EN_CTRL 1 "ENABLE" 0 "DISABLE" ;
+VAL_ 273 BRAKE_PEDAL_EN_CTRL 1 "ENABLE" 0 "DISABLE" ;
+VAL_ 274 STEER_ANGLE_EN_CTRL 1 "ENABLE" 0 "DISABLE" ;
+VAL_ 275 TURN_SIGNAL_CMD 2 "RIGHT" 1 "LEFT" 0 "NONE" ;
+VAL_ 276 GEAR_CMD 4 "DRIVE" 3 "NEUTRAL" 2 "REVERSE" 1 "PARK" ;
+VAL_ 277 CTRL_CMD 1 "Under control"  0 "Out of control" ;
+
+VAL_ 1296 THROTTLE_PEDAL_EN_STS 1 "ENABLE" 0 "DISABLE" 2 "TAKEOVER" ;
+VAL_ 1297 BRAKE_PEDAL_EN_STS 1 "ENABLE" 0 "DISABLE" 2 "TAKEOVER" ;
+VAL_ 1298 STEER_ANGLE_EN_STS 1 "ENABLE" 0 "DISABLE" 2 "TAKEOVER" ;
+VAL_ 1299 TURN_SIGNAL_STS 2 "RIGHT" 1 "LEFT" 0 "NONE" ;
+VAL_ 1300 GEAR_STS 4 "DRIVE" 3 "NEUTRAL" 2 "REVERSE" 1 "PARK" ;
+VAL_ 1301 CTRL_STS 1 "Under control"  0 "Out of control" ;
+

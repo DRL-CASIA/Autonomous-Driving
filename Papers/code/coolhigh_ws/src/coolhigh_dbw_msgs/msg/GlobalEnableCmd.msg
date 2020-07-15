@@ -1,0 +1,2 @@
+bool global_enable
+

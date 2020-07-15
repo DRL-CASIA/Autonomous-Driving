@@ -1,0 +1,1419 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_:
+VAL_TABLE_ On_Off 1 "On" 0 "Off" ;
+VAL_TABLE_ Valid 1 "Valid" 0 "Invalid" ;
+VAL_TABLE_ Model_Degree 3 "Three_Degree_Model" 2 "Parabolic_Model" 1 "Linear_Model" ;
+VAL_TABLE_ Quality 3 "High_Quality" 2 "High_Quality" 1 "Low_Quality" 0 "Low_Quality" ;
+VAL_TABLE_ Lane_Type 6 "Invalid" 5 "Botts_Dots" 4 "Double_Lane_Mark" 3 "Road_Edge" 2 "Undecied" 1 "Solid" 0 "Dashed" ;
+VAL_TABLE_ TSR_Warning_Level 7 "Level7" 6 "Level6" 5 "Level5" 4 "Level4" 3 "Level3" 2 "Level2" 1 "Level1" 0 "Level0" ;
+VAL_TABLE_ Headway_Waring_Level 2 "Level2" 1 "Level1" 0 "Level0" ;
+VAL_TABLE_ Error_Valid 1 "No Error" 0 "Error" ;
+VAL_TABLE_ Time_Indicator 2 "Night" 1 "Dusk" 0 "Day" ;
+VAL_TABLE_ Sound_Type 6 "FCW and PCW" 5 "UFCW" 4 "TSR" 3 "HW1" 2 "LDW Right" 1 "LDW Left" 0 "Silent" ;
+VAL_TABLE_ Radar_Match_Confidence 5 "High match" 4 "Match3" 3 "Match2" 2 "Match1" 1 "Multi match" 0 "Not match" ;
+VAL_TABLE_ CIPV_Flag 1 "CIPV" 0 "Not CIPV" ;
+VAL_TABLE_ Obstacle_Lane 3 "Invalid signal" 2 "Next lane" 1 "Ego lane" 0 "Not assigned" ;
+VAL_TABLE_ Obstacle_Valid 2 "Older valid" 1 "New valid" ;
+VAL_TABLE_ Obstacle_Status 5 "Parked" 4 "Oncoming" 3 "Moving" 2 "Stopped" 1 "Standing" 0 "Undefined" ;
+VAL_TABLE_ Obstacle_Type 4 "Bicycle" 3 "Ped" 2 "Bike" 1 "Truck" 0 "Vehicle" ;
+VAL_TABLE_ Cut_in_and_out 4 "Cut out" 3 "Cut in" 2 "Out host line" 1 "In host line" 0 "Undefined" ;
+VAL_TABLE_ Blinkers_status 4 "Both" 3 "Right" 2 "Left" 1 "Off" 0 "Unavaliable" ;
+VAL_TABLE_ Failsafe 2 "Blur Image" 1 "Low sun" 0 "No failsafe" ;
+VAL_TABLE_ Obstacle_moving_statue 15 "Not calculated" 3 "Driver decision is required" 2 "Undecided" 1 "Go" 0 "Stop" ;
+VAL_TABLE_ Available 1 "Available" 0 "Unavailable" ;
+VAL_TABLE_ Bool 1 "True" 0 "False" ;
+
+
+BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
+ SG_ FCW_On : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 1888 Vehicle_State: 8 Vector__XXX
+ SG_ Speed : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ Speed_Available : 15|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ High_Beam_Available : 13|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Low_Beam_Available : 12|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Wipers_Available : 11|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Brake_Signal : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Left_Signal : 1|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Right_Signal : 2|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Wipers : 3|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Low_Beam : 4|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ High_Beam : 5|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 1915 Next_Right_Lane3_B: 4 Vector__XXX
+ SG_ View_Range_Available : 31|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ View_Range : 16|15@1+ (0.00390625,0) [0|127.99609375] "m" Vector__XXX
+ SG_ Curve_Parameter_C1 : 0|16@1+ (0.0009765625,-31.9990234375) [-31.9990234375|32] "rad" Vector__XXX
+
+BO_ 1914 Next_Right_Lane3_A: 8 Vector__XXX
+ SG_ Width_Right_Marking : 56|8@1+ (0.01,0) [0|2.55] "m" Vector__XXX
+ SG_ Curve_Parameter_C3 : 40|16@1+ (3.72529029846191E-009,-0.000122066587209702) [-0.000122066587209702|0.0001220703125] "" Vector__XXX
+ SG_ Curve_Parameter_C2 : 24|16@1+ (9.765625E-007,-0.0319990234375) [-0.02|0.02] "" Vector__XXX
+ SG_ Curve_Parameter_C0 : 8|16@1- (0.00390625,0) [-128|127.99609375] "m" Vector__XXX
+ SG_ Model_Degree : 6|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Quality : 4|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Lane_Type : 0|4@1+ (1,0) [0|15] "" Vector__XXX
+
+BO_ 1911 Next_Right_Lane2_B: 4 Vector__XXX
+ SG_ View_Range_Available : 31|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ View_Range : 16|15@1+ (0.00390625,0) [0|127.99609375] "m" Vector__XXX
+ SG_ Curve_Parameter_C1 : 0|16@1+ (0.0009765625,-31.9990234375) [-31.9990234375|32] "rad" Vector__XXX
+
+BO_ 1910 Next_Right_Lane2_A: 8 Vector__XXX
+ SG_ Width_Right_Marking : 56|8@1+ (0.01,0) [0|2.55] "m" Vector__XXX
+ SG_ Curve_Parameter_C3 : 40|16@1+ (3.72529029846191E-009,-0.000122066587209702) [-0.000122066587209702|0.0001220703125] "" Vector__XXX
+ SG_ Curve_Parameter_C2 : 24|16@1+ (9.765625E-007,-0.0319990234375) [-0.02|0.02] "" Vector__XXX
+ SG_ Curve_Parameter_C0 : 8|16@1- (0.00390625,0) [-128|127.99609375] "m" Vector__XXX
+ SG_ Model_Degree : 6|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Quality : 4|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Lane_Type : 0|4@1+ (1,0) [0|15] "" Vector__XXX
+
+BO_ 1907 Next_Right_Lane1_B: 4 Vector__XXX
+ SG_ View_Range_Available : 31|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ View_Range : 16|15@1+ (0.00390625,0) [0|127.99609375] "m" Vector__XXX
+ SG_ Curve_Parameter_C1 : 0|16@1+ (0.0009765625,-31.9990234375) [-31.9990234375|32] "rad" Vector__XXX
+
+BO_ 1906 Next_Right_Lane1_A: 8 Vector__XXX
+ SG_ Width_Right_Marking : 56|8@1+ (0.01,0) [0|2.55] "m" Vector__XXX
+ SG_ Curve_Parameter_C3 : 40|16@1+ (3.72529029846191E-009,-0.000122066587209702) [-0.000122066587209702|0.0001220703125] "" Vector__XXX
+ SG_ Curve_Parameter_C2 : 24|16@1+ (9.765625E-007,-0.0319990234375) [-0.02|0.02] "" Vector__XXX
+ SG_ Curve_Parameter_C0 : 8|16@1- (0.00390625,0) [-128|127.99609375] "m" Vector__XXX
+ SG_ Model_Degree : 6|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Quality : 4|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Lane_Type : 0|4@1+ (1,0) [0|15] "" Vector__XXX
+
+BO_ 1903 Next_Right_Lane0_B: 4 Vector__XXX
+ SG_ View_Range_Available : 31|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ View_Range : 16|15@1+ (0.00390625,0) [0|127.99609375] "m" Vector__XXX
+ SG_ Curve_Parameter_C1 : 0|16@1+ (0.0009765625,-31.9990234375) [-31.9990234375|32] "rad" Vector__XXX
+
+BO_ 1902 Next_Right_Lane0_A: 8 Vector__XXX
+ SG_ Width_Right_Marking : 56|8@1+ (0.01,0) [0|2.55] "m" Vector__XXX
+ SG_ Curve_Parameter_C3 : 40|16@1+ (3.72529029846191E-009,-0.000122066587209702) [-0.000122066587209702|0.0001220703125] "" Vector__XXX
+ SG_ Curve_Parameter_C2 : 24|16@1+ (9.765625E-007,-0.0319990234375) [-0.02|0.02] "" Vector__XXX
+ SG_ Curve_Parameter_C0 : 8|16@1- (0.00390625,0) [-128|127.99609375] "m" Vector__XXX
+ SG_ Model_Degree : 6|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Quality : 4|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Lane_Type : 0|4@1+ (1,0) [0|15] "" Vector__XXX
+
+BO_ 1913 Next_Left_Lane3_B: 4 Vector__XXX
+ SG_ View_Range_Available : 31|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ View_Range : 16|15@1+ (0.00390625,0) [0|127.99609375] "m" Vector__XXX
+ SG_ Curve_Parameter_C1 : 0|16@1+ (0.0009765625,-31.9990234375) [-31.9990234375|32] "rad" Vector__XXX
+
+BO_ 1909 Next_Left_Lane2_B: 4 Vector__XXX
+ SG_ View_Range_Available : 31|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ View_Range : 16|15@1+ (0.00390625,0) [0|127.99609375] "m" Vector__XXX
+ SG_ Curve_Parameter_C1 : 0|16@1+ (0.0009765625,-31.9990234375) [-31.9990234375|32] "rad" Vector__XXX
+
+BO_ 1905 Next_Left_Lane1_B: 4 Vector__XXX
+ SG_ View_Range_Available : 31|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ View_Range : 16|15@1+ (0.00390625,0) [0|127.99609375] "m" Vector__XXX
+ SG_ Curve_Parameter_C1 : 0|16@1+ (0.0009765625,-31.9990234375) [-31.9990234375|32] "rad" Vector__XXX
+
+BO_ 1901 Next_Left_Lane0_B: 4 Vector__XXX
+ SG_ View_Range_Available : 31|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ View_Range : 16|15@1+ (0.00390625,0) [0|127.99609375] "m" Vector__XXX
+ SG_ Curve_Parameter_C1 : 0|16@1+ (0.0009765625,-31.9990234375) [-31.9990234375|32] "rad" Vector__XXX
+
+BO_ 1912 Next_Left_Lane3_A: 8 Vector__XXX
+ SG_ Width_Left_Marking : 56|8@1+ (0.01,0) [0|2.55] "m" Vector__XXX
+ SG_ Curve_Parameter_C3 : 40|16@1+ (3.72529029846191E-009,-0.000122066587209702) [-0.000122066587209702|0.0001220703125] "" Vector__XXX
+ SG_ Curve_Parameter_C2 : 24|16@1+ (9.765625E-007,-0.0319990234375) [-0.02|0.02] "" Vector__XXX
+ SG_ Curve_Parameter_C0 : 8|16@1- (0.00390625,0) [-128|127.99609375] "m" Vector__XXX
+ SG_ Model_Degree : 6|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Quality : 4|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Lane_Type : 0|4@1+ (1,0) [0|15] "" Vector__XXX
+
+BO_ 1908 Next_Left_Lane2_A: 8 Vector__XXX
+ SG_ Width_Left_Marking : 56|8@1+ (0.01,0) [0|2.55] "m" Vector__XXX
+ SG_ Curve_Parameter_C3 : 40|16@1+ (3.72529029846191E-009,-0.000122066587209702) [-0.000122066587209702|0.0001220703125] "" Vector__XXX
+ SG_ Curve_Parameter_C2 : 24|16@1+ (9.765625E-007,-0.0319990234375) [-0.02|0.02] "" Vector__XXX
+ SG_ Curve_Parameter_C0 : 8|16@1- (0.00390625,0) [-128|127.99609375] "m" Vector__XXX
+ SG_ Model_Degree : 6|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Quality : 4|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Lane_Type : 0|4@1+ (1,0) [0|15] "" Vector__XXX
+
+BO_ 1904 Next_Left_Lane1_A: 8 Vector__XXX
+ SG_ Width_Left_Marking : 56|8@1+ (0.01,0) [0|2.55] "m" Vector__XXX
+ SG_ Curve_Parameter_C3 : 40|16@1+ (3.72529029846191E-009,-0.000122066587209702) [-0.000122066587209702|0.0001220703125] "" Vector__XXX
+ SG_ Curve_Parameter_C2 : 24|16@1+ (9.765625E-007,-0.0319990234375) [-0.02|0.02] "" Vector__XXX
+ SG_ Curve_Parameter_C0 : 8|16@1- (0.00390625,0) [-128|127.99609375] "m" Vector__XXX
+ SG_ Model_Degree : 6|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Quality : 4|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Lane_Type : 0|4@1+ (1,0) [0|15] "" Vector__XXX
+
+BO_ 1900 Next_Left_Lane0_A: 8 Vector__XXX
+ SG_ Width_Left_Marking : 56|8@1+ (0.01,0) [0|2.55] "m" Vector__XXX
+ SG_ Curve_Parameter_C3 : 40|16@1+ (3.72529029846191E-009,-0.000122066587209702) [-0.000122066587209702|0.0001220703125] "" Vector__XXX
+ SG_ Curve_Parameter_C2 : 24|16@1+ (9.765625E-007,-0.0319990234375) [-0.02|0.02] "" Vector__XXX
+ SG_ Curve_Parameter_C0 : 8|16@1- (0.00390625,0) [-128|127.99609375] "m" Vector__XXX
+ SG_ Model_Degree : 6|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Quality : 4|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Lane_Type : 0|4@1+ (1,0) [0|15] "" Vector__XXX
+
+BO_ 1899 Number_Of_Next_LaneMarker: 8 Vector__XXX
+ SG_ Number_Of_Next_Lane : 0|8@1+ (1,0) [0|7] "" Vector__XXX
+
+BO_ 1898 Reference_Points: 8 Vector__XXX
+ SG_ Ref_Point1_Validity : 63|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Ref_Point2_Distance : 48|15@1+ (0.00390625,0) [0|127.99609375] "m" Vector__XXX
+ SG_ Ref_Point2_Position : 32|16@1+ (0.00390625,-127.99609375) [-127.99609375|128] "m" Vector__XXX
+ SG_ Ref_Point1_Validity : 31|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Ref_Point1_Distance : 16|15@1+ (0.00390625,0) [0|127.99609375] "m" Vector__XXX
+ SG_ Ref_Point1_Position : 0|16@1+ (0.00390625,-127.99609375) [-127.99609375|128] "m" Vector__XXX
+
+BO_ 1897 Right_Lane_B: 4 Vector__XXX
+ SG_ View_Range_Available : 31|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ View_Range : 16|15@1+ (0.00390625,0) [0|127.99609375] "m" Vector__XXX
+ SG_ Curve_Parameter_C1 : 0|16@1+ (0.0009765625,-31.9990234375) [-31.9990234375|32] "rad" Vector__XXX
+
+BO_ 1896 Right_Lane_A: 8 Vector__XXX
+ SG_ Width_Right_Marking : 56|8@1+ (0.01,0) [0|2.55] "m" Vector__XXX
+ SG_ Curve_Parameter_C3 : 40|16@1+ (3.72529029846191E-009,-0.000122066587209702) [-0.000122066587209702|0.0001220703125] "" Vector__XXX
+ SG_ Curve_Parameter_C2 : 24|16@1+ (9.765625E-007,-0.0319990234375) [-0.02|0.02] "" Vector__XXX
+ SG_ Curve_Parameter_C0 : 8|16@1- (0.00390625,0) [-128|127.99609375] "m" Vector__XXX
+ SG_ Model_Degree : 6|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Quality : 4|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Lane_Type : 0|4@1+ (1,0) [0|15] "" Vector__XXX
+
+BO_ 1895 Left_Lane_B: 4 Vector__XXX
+ SG_ View_Range_Available : 31|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ View_Range : 16|15@1+ (0.00390625,0) [0|127.99609375] "m" Vector__XXX
+ SG_ Curve_Parameter_C1 : 0|16@1+ (0.0009765625,-31.9990234375) [-31.9990234375|32] "rad" Vector__XXX
+
+BO_ 1894 Left_Lane_A: 8 Vector__XXX
+ SG_ Width_Left_Marking : 56|8@1+ (0.01,0) [0|2.55] "m" Vector__XXX
+ SG_ Curve_Parameter_C3 : 40|16@1+ (3.72529029846191E-009,-0.000122066587209702) [-0.000122066587209702|0.0001220703125] "" Vector__XXX
+ SG_ Curve_Parameter_C2 : 24|16@1+ (9.765625E-007,-0.0319990234375) [-0.02|0.02] "" Vector__XXX
+ SG_ Curve_Parameter_C0 : 8|16@1- (0.00390625,0) [-128|127.99609375] "m" Vector__XXX
+ SG_ Model_Degree : 6|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Quality : 4|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Lane_Type : 0|4@1+ (1,0) [0|15] "" Vector__XXX
+
+BO_ 1887 Obstacle12_Data_C: 8 Vector__XXX
+ SG_ Obstacle_Angle : 48|16@1- (0.01,0) [-327.68|327.67] "deg" Vector__XXX
+ SG_ Obstacle_Replaced : 44|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Object_Accel_X : 32|10@1- (0.03,0) [-14.97|14.97] "" Vector__XXX
+ SG_ Obstacle_Scale_Change : 16|16@1- (0.0002,0) [-6.5536|6.5534] "pix/s" Vector__XXX
+ SG_ Obstacle_Angle_Rate : 0|16@1- (0.01,0) [-327.68|327.67] "deg/s" Vector__XXX
+
+BO_ 1886 Obstacle12_Data_B: 8 Vector__XXX
+ SG_ Matched_Radar_ID : 56|7@1+ (1,0) [0|127] "" Vector__XXX
+ SG_ Radar_Match_Confidence : 52|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Radar_Velocity_X : 40|12@1- (0.0625,0) [-127.93|127.93] "" Vector__XXX
+ SG_ Radar_Position_X : 28|12@1+ (0.0625,0) [0|250] "m" Vector__XXX
+ SG_ CIPV_Flag : 26|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Obstacle_Lane : 24|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Obstacle_Age : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ Obstacle_Width : 8|8@1+ (0.05,0) [0|12.5] "m" Vector__XXX
+ SG_ Obstacle_Length : 0|8@1+ (0.5,0) [0|31] "m" Vector__XXX
+
+BO_ 1885 Obstacle12_Data_A: 8 Vector__XXX
+ SG_ Obstacle_Valid : 62|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Obstacle_Brake_Lights : 59|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Obstacle_Status : 56|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Obstacle_Type : 52|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Obstacle_Relative_Velocity_X : 40|12@1- (0.0625,0) [-127.93|127.93] "m/s" Vector__XXX
+ SG_ Cut_In_and_Out : 37|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Blinker_Info : 34|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Obstacle_Position_Y : 24|10@1- (0.0625,0) [-31.93|31.93] "m" Vector__XXX
+ SG_ Obstacle_Position_X : 8|12@1+ (0.0625,0) [0|250] "m" Vector__XXX
+ SG_ Obstacle_ID : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 1884 Obstacle11_Data_C: 8 Vector__XXX
+ SG_ Obstacle_Angle : 48|16@1- (0.01,0) [-327.68|327.67] "deg" Vector__XXX
+ SG_ Obstacle_Replaced : 44|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Object_Accel_X : 32|10@1- (0.03,0) [-14.97|14.97] "" Vector__XXX
+ SG_ Obstacle_Scale_Change : 16|16@1- (0.0002,0) [-6.5536|6.5534] "pix/s" Vector__XXX
+ SG_ Obstacle_Angle_Rate : 0|16@1- (0.01,0) [-327.68|327.67] "deg/s" Vector__XXX
+
+BO_ 1883 Obstacle11_Data_B: 8 Vector__XXX
+ SG_ Matched_Radar_ID : 56|7@1+ (1,0) [0|127] "" Vector__XXX
+ SG_ Radar_Match_Confidence : 52|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Radar_Velocity_X : 40|12@1- (0.0625,0) [-127.93|127.93] "" Vector__XXX
+ SG_ Radar_Position_X : 28|12@1+ (0.0625,0) [0|250] "m" Vector__XXX
+ SG_ CIPV_Flag : 26|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Obstacle_Lane : 24|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Obstacle_Age : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ Obstacle_Width : 8|8@1+ (0.05,0) [0|12.5] "m" Vector__XXX
+ SG_ Obstacle_Length : 0|8@1+ (0.5,0) [0|31] "m" Vector__XXX
+
+BO_ 1882 Obstacle11_Data_A: 8 Vector__XXX
+ SG_ Obstacle_Valid : 62|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Obstacle_Brake_Lights : 59|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Obstacle_Status : 56|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Obstacle_Type : 52|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Obstacle_Relative_Velocity_X : 40|12@1- (0.0625,0) [-127.93|127.93] "m/s" Vector__XXX
+ SG_ Cut_In_and_Out : 37|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Blinker_Info : 34|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Obstacle_Position_Y : 24|10@1- (0.0625,0) [-31.93|31.93] "m" Vector__XXX
+ SG_ Obstacle_Position_X : 8|12@1+ (0.0625,0) [0|250] "m" Vector__XXX
+ SG_ Obstacle_ID : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 1881 Obstacle10_Data_C: 8 Vector__XXX
+ SG_ Obstacle_Angle : 48|16@1- (0.01,0) [-327.68|327.67] "deg" Vector__XXX
+ SG_ Obstacle_Replaced : 44|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Object_Accel_X : 32|10@1- (0.03,0) [-14.97|14.97] "" Vector__XXX
+ SG_ Obstacle_Scale_Change : 16|16@1- (0.0002,0) [-6.5536|6.5534] "pix/s" Vector__XXX
+ SG_ Obstacle_Angle_Rate : 0|16@1- (0.01,0) [-327.68|327.67] "deg/s" Vector__XXX
+
+BO_ 1880 Obstacle10_Data_B: 8 Vector__XXX
+ SG_ Matched_Radar_ID : 56|7@1+ (1,0) [0|127] "" Vector__XXX
+ SG_ Radar_Match_Confidence : 52|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Radar_Velocity_X : 40|12@1- (0.0625,0) [-127.93|127.93] "" Vector__XXX
+ SG_ Radar_Position_X : 28|12@1+ (0.0625,0) [0|250] "m" Vector__XXX
+ SG_ CIPV_Flag : 26|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Obstacle_Lane : 24|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Obstacle_Age : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ Obstacle_Width : 8|8@1+ (0.05,0) [0|12.5] "m" Vector__XXX
+ SG_ Obstacle_Length : 0|8@1+ (0.5,0) [0|31] "m" Vector__XXX
+
+BO_ 1879 Obstacle10_Data_A: 8 Vector__XXX
+ SG_ Obstacle_Valid : 62|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Obstacle_Brake_Lights : 59|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Obstacle_Status : 56|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Obstacle_Type : 52|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Obstacle_Relative_Velocity_X : 40|12@1- (0.0625,0) [-127.93|127.93] "m/s" Vector__XXX
+ SG_ Cut_In_and_Out : 37|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Blinker_Info : 34|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Obstacle_Position_Y : 24|10@1- (0.0625,0) [-31.93|31.93] "m" Vector__XXX
+ SG_ Obstacle_Position_X : 8|12@1+ (0.0625,0) [0|250] "m" Vector__XXX
+ SG_ Obstacle_ID : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 1878 Obstacle9_Data_C: 8 Vector__XXX
+ SG_ Obstacle_Angle : 48|16@1- (0.01,0) [-327.68|327.67] "deg" Vector__XXX
+ SG_ Obstacle_Replaced : 44|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Object_Accel_X : 32|10@1- (0.03,0) [-14.97|14.97] "" Vector__XXX
+ SG_ Obstacle_Scale_Change : 16|16@1- (0.0002,0) [-6.5536|6.5534] "pix/s" Vector__XXX
+ SG_ Obstacle_Angle_Rate : 0|16@1- (0.01,0) [-327.68|327.67] "deg/s" Vector__XXX
+
+BO_ 1877 Obstacle9_Data_B: 8 Vector__XXX
+ SG_ Matched_Radar_ID : 56|7@1+ (1,0) [0|127] "" Vector__XXX
+ SG_ Radar_Match_Confidence : 52|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Radar_Velocity_X : 40|12@1- (0.0625,0) [-127.93|127.93] "" Vector__XXX
+ SG_ Radar_Position_X : 28|12@1+ (0.0625,0) [0|250] "m" Vector__XXX
+ SG_ CIPV_Flag : 26|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Obstacle_Lane : 24|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Obstacle_Age : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ Obstacle_Width : 8|8@1+ (0.05,0) [0|12.5] "m" Vector__XXX
+ SG_ Obstacle_Length : 0|8@1+ (0.5,0) [0|31] "m" Vector__XXX
+
+BO_ 1876 Obstacle9_Data_A: 8 Vector__XXX
+ SG_ Obstacle_Valid : 62|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Obstacle_Brake_Lights : 59|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Obstacle_Status : 56|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Obstacle_Type : 52|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Obstacle_Relative_Velocity_X : 40|12@1- (0.0625,0) [-127.93|127.93] "m/s" Vector__XXX
+ SG_ Cut_In_and_Out : 37|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Blinker_Info : 34|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Obstacle_Position_Y : 24|10@1- (0.0625,0) [-31.93|31.93] "m" Vector__XXX
+ SG_ Obstacle_Position_X : 8|12@1+ (0.0625,0) [0|250] "m" Vector__XXX
+ SG_ Obstacle_ID : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 1875 Obstacle8_Data_C: 8 Vector__XXX
+ SG_ Obstacle_Angle : 48|16@1- (0.01,0) [-327.68|327.67] "deg" Vector__XXX
+ SG_ Obstacle_Replaced : 44|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Object_Accel_X : 32|10@1- (0.03,0) [-14.97|14.97] "" Vector__XXX
+ SG_ Obstacle_Scale_Change : 16|16@1- (0.0002,0) [-6.5536|6.5534] "pix/s" Vector__XXX
+ SG_ Obstacle_Angle_Rate : 0|16@1- (0.01,0) [-327.68|327.67] "deg/s" Vector__XXX
+
+BO_ 1874 Obstacle8_Data_B: 8 Vector__XXX
+ SG_ Matched_Radar_ID : 56|7@1+ (1,0) [0|127] "" Vector__XXX
+ SG_ Radar_Match_Confidence : 52|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Radar_Velocity_X : 40|12@1- (0.0625,0) [-127.93|127.93] "" Vector__XXX
+ SG_ Radar_Position_X : 28|12@1+ (0.0625,0) [0|250] "m" Vector__XXX
+ SG_ CIPV_Flag : 26|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Obstacle_Lane : 24|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Obstacle_Age : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ Obstacle_Width : 8|8@1+ (0.05,0) [0|12.5] "m" Vector__XXX
+ SG_ Obstacle_Length : 0|8@1+ (0.5,0) [0|31] "m" Vector__XXX
+
+BO_ 1873 Obstacle8_Data_A: 8 Vector__XXX
+ SG_ Obstacle_Valid : 62|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Obstacle_Brake_Lights : 59|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Obstacle_Status : 56|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Obstacle_Type : 52|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Obstacle_Relative_Velocity_X : 40|12@1- (0.0625,0) [-127.93|127.93] "m/s" Vector__XXX
+ SG_ Cut_In_and_Out : 37|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Blinker_Info : 34|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Obstacle_Position_Y : 24|10@1- (0.0625,0) [-31.93|31.93] "m" Vector__XXX
+ SG_ Obstacle_Position_X : 8|12@1+ (0.0625,0) [0|250] "m" Vector__XXX
+ SG_ Obstacle_ID : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 1872 Obstacle7_Data_C: 8 Vector__XXX
+ SG_ Obstacle_Angle : 48|16@1- (0.01,0) [-327.68|327.67] "deg" Vector__XXX
+ SG_ Obstacle_Replaced : 44|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Object_Accel_X : 32|10@1- (0.03,0) [-14.97|14.97] "" Vector__XXX
+ SG_ Obstacle_Scale_Change : 16|16@1- (0.0002,0) [-6.5536|6.5534] "pix/s" Vector__XXX
+ SG_ Obstacle_Angle_Rate : 0|16@1- (0.01,0) [-327.68|327.67] "deg/s" Vector__XXX
+
+BO_ 1871 Obstacle7_Data_B: 8 Vector__XXX
+ SG_ Matched_Radar_ID : 56|7@1+ (1,0) [0|127] "" Vector__XXX
+ SG_ Radar_Match_Confidence : 52|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Radar_Velocity_X : 40|12@1- (0.0625,0) [-127.93|127.93] "" Vector__XXX
+ SG_ Radar_Position_X : 28|12@1+ (0.0625,0) [0|250] "m" Vector__XXX
+ SG_ CIPV_Flag : 26|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Obstacle_Lane : 24|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Obstacle_Age : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ Obstacle_Width : 8|8@1+ (0.05,0) [0|12.5] "m" Vector__XXX
+ SG_ Obstacle_Length : 0|8@1+ (0.5,0) [0|31] "m" Vector__XXX
+
+BO_ 1870 Obstacle7_Data_A: 8 Vector__XXX
+ SG_ Obstacle_Valid : 62|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Obstacle_Brake_Lights : 59|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Obstacle_Status : 56|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Obstacle_Type : 52|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Obstacle_Relative_Velocity_X : 40|12@1- (0.0625,0) [-127.93|127.93] "m/s" Vector__XXX
+ SG_ Cut_In_and_Out : 37|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Blinker_Info : 34|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Obstacle_Position_Y : 24|10@1- (0.0625,0) [-31.93|31.93] "m" Vector__XXX
+ SG_ Obstacle_Position_X : 8|12@1+ (0.0625,0) [0|250] "m" Vector__XXX
+ SG_ Obstacle_ID : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 1869 Obstacle6_Data_C: 8 Vector__XXX
+ SG_ Obstacle_Angle : 48|16@1- (0.01,0) [-327.68|327.67] "deg" Vector__XXX
+ SG_ Obstacle_Replaced : 44|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Object_Accel_X : 32|10@1- (0.03,0) [-14.97|14.97] "" Vector__XXX
+ SG_ Obstacle_Scale_Change : 16|16@1- (0.0002,0) [-6.5536|6.5534] "pix/s" Vector__XXX
+ SG_ Obstacle_Angle_Rate : 0|16@1- (0.01,0) [-327.68|327.67] "deg/s" Vector__XXX
+
+BO_ 1868 Obstacle6_Data_B: 8 Vector__XXX
+ SG_ Matched_Radar_ID : 56|7@1+ (1,0) [0|127] "" Vector__XXX
+ SG_ Radar_Match_Confidence : 52|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Radar_Velocity_X : 40|12@1- (0.0625,0) [-127.93|127.93] "" Vector__XXX
+ SG_ Radar_Position_X : 28|12@1+ (0.0625,0) [0|250] "m" Vector__XXX
+ SG_ CIPV_Flag : 26|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Obstacle_Lane : 24|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Obstacle_Age : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ Obstacle_Width : 8|8@1+ (0.05,0) [0|12.5] "m" Vector__XXX
+ SG_ Obstacle_Length : 0|8@1+ (0.5,0) [0|31] "m" Vector__XXX
+
+BO_ 1867 Obstacle6_Data_A: 8 Vector__XXX
+ SG_ Obstacle_Valid : 62|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Obstacle_Brake_Lights : 59|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Obstacle_Status : 56|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Obstacle_Type : 52|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Obstacle_Relative_Velocity_X : 40|12@1- (0.0625,0) [-127.93|127.93] "m/s" Vector__XXX
+ SG_ Cut_In_and_Out : 37|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Blinker_Info : 34|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Obstacle_Position_Y : 24|10@1- (0.0625,0) [-31.93|31.93] "m" Vector__XXX
+ SG_ Obstacle_Position_X : 8|12@1+ (0.0625,0) [0|250] "m" Vector__XXX
+ SG_ Obstacle_ID : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 1866 Obstacle5_Data_C: 8 Vector__XXX
+ SG_ Obstacle_Angle : 48|16@1- (0.01,0) [-327.68|327.67] "deg" Vector__XXX
+ SG_ Obstacle_Replaced : 44|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Object_Accel_X : 32|10@1- (0.03,0) [-14.97|14.97] "" Vector__XXX
+ SG_ Obstacle_Scale_Change : 16|16@1- (0.0002,0) [-6.5536|6.5534] "pix/s" Vector__XXX
+ SG_ Obstacle_Angle_Rate : 0|16@1- (0.01,0) [-327.68|327.67] "deg/s" Vector__XXX
+
+BO_ 1865 Obstacle5_Data_B: 8 Vector__XXX
+ SG_ Matched_Radar_ID : 56|7@1+ (1,0) [0|127] "" Vector__XXX
+ SG_ Radar_Match_Confidence : 52|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Radar_Velocity_X : 40|12@1- (0.0625,0) [-127.93|127.93] "" Vector__XXX
+ SG_ Radar_Position_X : 28|12@1+ (0.0625,0) [0|250] "m" Vector__XXX
+ SG_ CIPV_Flag : 26|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Obstacle_Lane : 24|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Obstacle_Age : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ Obstacle_Width : 8|8@1+ (0.05,0) [0|12.5] "m" Vector__XXX
+ SG_ Obstacle_Length : 0|8@1+ (0.5,0) [0|31] "m" Vector__XXX
+
+BO_ 1864 Obstacle5_Data_A: 8 Vector__XXX
+ SG_ Obstacle_Valid : 62|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Obstacle_Brake_Lights : 59|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Obstacle_Status : 56|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Obstacle_Type : 52|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Obstacle_Relative_Velocity_X : 40|12@1- (0.0625,0) [-127.93|127.93] "m/s" Vector__XXX
+ SG_ Cut_In_and_Out : 37|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Blinker_Info : 34|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Obstacle_Position_Y : 24|10@1- (0.0625,0) [-31.93|31.93] "m" Vector__XXX
+ SG_ Obstacle_Position_X : 8|12@1+ (0.0625,0) [0|250] "m" Vector__XXX
+ SG_ Obstacle_ID : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 1863 Obstacle4_Data_C: 8 Vector__XXX
+ SG_ Obstacle_Angle : 48|16@1- (0.01,0) [-327.68|327.67] "deg" Vector__XXX
+ SG_ Obstacle_Replaced : 44|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Object_Accel_X : 32|10@1- (0.03,0) [-14.97|14.97] "" Vector__XXX
+ SG_ Obstacle_Scale_Change : 16|16@1- (0.0002,0) [-6.5536|6.5534] "pix/s" Vector__XXX
+ SG_ Obstacle_Angle_Rate : 0|16@1- (0.01,0) [-327.68|327.67] "deg/s" Vector__XXX
+
+BO_ 1862 Obstacle4_Data_B: 8 Vector__XXX
+ SG_ Matched_Radar_ID : 56|7@1+ (1,0) [0|127] "" Vector__XXX
+ SG_ Radar_Match_Confidence : 52|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Radar_Velocity_X : 40|12@1- (0.0625,0) [-127.93|127.93] "" Vector__XXX
+ SG_ Radar_Position_X : 28|12@1+ (0.0625,0) [0|250] "m" Vector__XXX
+ SG_ CIPV_Flag : 26|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Obstacle_Lane : 24|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Obstacle_Age : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ Obstacle_Width : 8|8@1+ (0.05,0) [0|12.5] "m" Vector__XXX
+ SG_ Obstacle_Length : 0|8@1+ (0.5,0) [0|31] "m" Vector__XXX
+
+BO_ 1861 Obstacle4_Data_A: 8 Vector__XXX
+ SG_ Obstacle_Valid : 62|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Obstacle_Brake_Lights : 59|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Obstacle_Status : 56|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Obstacle_Type : 52|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Obstacle_Relative_Velocity_X : 40|12@1- (0.0625,0) [-127.93|127.93] "m/s" Vector__XXX
+ SG_ Cut_In_and_Out : 37|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Blinker_Info : 34|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Obstacle_Position_Y : 24|10@1- (0.0625,0) [-31.93|31.93] "m" Vector__XXX
+ SG_ Obstacle_Position_X : 8|12@1+ (0.0625,0) [0|250] "m" Vector__XXX
+ SG_ Obstacle_ID : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 1860 Obstacle3_Data_C: 8 Vector__XXX
+ SG_ Obstacle_Angle : 48|16@1- (0.01,0) [-327.68|327.67] "deg" Vector__XXX
+ SG_ Obstacle_Replaced : 44|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Object_Accel_X : 32|10@1- (0.03,0) [-14.97|14.97] "" Vector__XXX
+ SG_ Obstacle_Scale_Change : 16|16@1- (0.0002,0) [-6.5536|6.5534] "pix/s" Vector__XXX
+ SG_ Obstacle_Angle_Rate : 0|16@1- (0.01,0) [-327.68|327.67] "deg/s" Vector__XXX
+
+BO_ 1859 Obstacle3_Data_B: 8 Vector__XXX
+ SG_ Matched_Radar_ID : 56|7@1+ (1,0) [0|127] "" Vector__XXX
+ SG_ Radar_Match_Confidence : 52|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Radar_Velocity_X : 40|12@1- (0.0625,0) [-127.93|127.93] "" Vector__XXX
+ SG_ Radar_Position_X : 28|12@1+ (0.0625,0) [0|250] "m" Vector__XXX
+ SG_ CIPV_Flag : 26|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Obstacle_Lane : 24|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Obstacle_Age : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ Obstacle_Width : 8|8@1+ (0.05,0) [0|12.5] "m" Vector__XXX
+ SG_ Obstacle_Length : 0|8@1+ (0.5,0) [0|31] "m" Vector__XXX
+
+BO_ 1858 Obstacle3_Data_A: 8 Vector__XXX
+ SG_ Obstacle_Valid : 62|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Obstacle_Brake_Lights : 59|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Obstacle_Status : 56|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Obstacle_Type : 52|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Obstacle_Relative_Velocity_X : 40|12@1- (0.0625,0) [-127.93|127.93] "m/s" Vector__XXX
+ SG_ Cut_In_and_Out : 37|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Blinker_Info : 34|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Obstacle_Position_Y : 24|10@1- (0.0625,0) [-31.93|31.93] "m" Vector__XXX
+ SG_ Obstacle_Position_X : 8|12@1+ (0.0625,0) [0|250] "m" Vector__XXX
+ SG_ Obstacle_ID : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 1857 Obstacle2_Data_C: 8 Vector__XXX
+ SG_ Obstacle_Angle : 48|16@1- (0.01,0) [-327.68|327.67] "deg" Vector__XXX
+ SG_ Obstacle_Replaced : 44|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Object_Accel_X : 32|10@1- (0.03,0) [-14.97|14.97] "" Vector__XXX
+ SG_ Obstacle_Scale_Change : 16|16@1- (0.0002,0) [-6.5536|6.5534] "pix/s" Vector__XXX
+ SG_ Obstacle_Angle_Rate : 0|16@1- (0.01,0) [-327.68|327.67] "deg/s" Vector__XXX
+
+BO_ 1856 Obstacle2_Data_B: 8 Vector__XXX
+ SG_ Matched_Radar_ID : 56|7@1+ (1,0) [0|127] "" Vector__XXX
+ SG_ Radar_Match_Confidence : 52|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Radar_Velocity_X : 40|12@1- (0.0625,0) [-127.93|127.93] "" Vector__XXX
+ SG_ Radar_Position_X : 28|12@1+ (0.0625,0) [0|250] "m" Vector__XXX
+ SG_ CIPV_Flag : 26|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Obstacle_Lane : 24|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Obstacle_Age : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ Obstacle_Width : 8|8@1+ (0.05,0) [0|12.5] "m" Vector__XXX
+ SG_ Obstacle_Length : 0|8@1+ (0.5,0) [0|31] "m" Vector__XXX
+
+BO_ 1855 Obstacle2_Data_A: 8 Vector__XXX
+ SG_ Obstacle_Valid : 62|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Obstacle_Brake_Lights : 59|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Obstacle_Status : 56|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Obstacle_Type : 52|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Obstacle_Relative_Velocity_X : 40|12@1- (0.0625,0) [-127.93|127.93] "m/s" Vector__XXX
+ SG_ Cut_In_and_Out : 37|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Blinker_Info : 34|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Obstacle_Position_Y : 24|10@1- (0.0625,0) [-31.93|31.93] "m" Vector__XXX
+ SG_ Obstacle_Position_X : 8|12@1+ (0.0625,0) [0|250] "m" Vector__XXX
+ SG_ Obstacle_ID : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 1854 Obstacle1_Data_C: 8 Vector__XXX
+ SG_ Obstacle_Angle : 48|16@1- (0.01,0) [-327.68|327.67] "deg" Vector__XXX
+ SG_ Obstacle_Replaced : 44|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Object_Accel_X : 32|10@1- (0.03,0) [-14.97|14.97] "" Vector__XXX
+ SG_ Obstacle_Scale_Change : 16|16@1- (0.0002,0) [-6.5536|6.5534] "pix/s" Vector__XXX
+ SG_ Obstacle_Angle_Rate : 0|16@1- (0.01,0) [-327.68|327.67] "deg/s" Vector__XXX
+
+BO_ 1853 Obstacle1_Data_B: 8 Vector__XXX
+ SG_ Matched_Radar_ID : 56|7@1+ (1,0) [0|127] "" Vector__XXX
+ SG_ Radar_Match_Confidence : 52|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Radar_Velocity_X : 40|12@1- (0.0625,0) [-127.93|127.93] "" Vector__XXX
+ SG_ Radar_Position_X : 28|12@1+ (0.0625,0) [0|250] "m" Vector__XXX
+ SG_ CIPV_Flag : 26|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Obstacle_Lane : 24|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Obstacle_Age : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ Obstacle_Width : 8|8@1+ (0.05,0) [0|12.5] "m" Vector__XXX
+ SG_ Obstacle_Length : 0|8@1+ (0.5,0) [0|31] "m" Vector__XXX
+
+BO_ 1852 Obstacle1_Data_A: 8 Vector__XXX
+ SG_ Obstacle_Valid : 62|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Obstacle_Brake_Lights : 59|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Obstacle_Status : 56|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Obstacle_Type : 52|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Obstacle_Relative_Velocity_X : 40|12@1- (0.0625,0) [-127.93|127.93] "m/s" Vector__XXX
+ SG_ Cut_In_and_Out : 37|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Blinker_Info : 34|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Obstacle_Position_Y : 24|10@1- (0.0625,0) [-31.93|31.93] "m" Vector__XXX
+ SG_ Obstacle_Position_X : 8|12@1+ (0.0625,0) [0|250] "m" Vector__XXX
+ SG_ Obstacle_ID : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 1792 Interface: 8 Vector__XXX
+ SG_ Right_LDW_On : 34|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Tamper_Alert : 45|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ TSR_Warning_Level : 48|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Headway_Warning_Level : 56|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ HW_Repeatable_Enable : 58|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ TSR_Enabled : 47|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ FCW_On : 35|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Failsafe : 39|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Maintenance : 38|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Left_LDW_On : 33|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ LDW_Off : 32|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Headway_Measurement_Unsure : 17|7@1+ (0.0625,0) [0|7.9375] "" Vector__XXX
+ SG_ Error_Code : 25|7@1+ (1,0) [0|127] "" Vector__XXX
+ SG_ Error_Valid : 24|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Peds_FCW : 41|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Peds_in_DZ : 42|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Headway_Valid : 16|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Zero_Speed : 13|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Time_Indicator : 3|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Sound_Type : 0|3@1+ (1,0) [0|7] "" Vector__XXX
+
+BO_ 1851 Obstacle0_Data_C: 8 Vector__XXX
+ SG_ Obstacle_Angle : 48|16@1- (0.01,0) [-327.68|327.67] "deg" Vector__XXX
+ SG_ Obstacle_Replaced : 44|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Object_Accel_X : 32|10@1- (0.03,0) [-14.97|14.97] "" Vector__XXX
+ SG_ Obstacle_Scale_Change : 16|16@1- (0.0002,0) [-6.5536|6.5534] "pix/s" Vector__XXX
+ SG_ Obstacle_Angle_Rate : 0|16@1- (0.01,0) [-327.68|327.67] "deg/s" Vector__XXX
+
+BO_ 1850 Obstacle0_Data_B: 8 Vector__XXX
+ SG_ Matched_Radar_ID : 56|7@1+ (1,0) [0|127] "" Vector__XXX
+ SG_ Radar_Match_Confidence : 52|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Radar_Velocity_X : 40|12@1- (0.0625,0) [-127.93|127.93] "" Vector__XXX
+ SG_ Radar_Position_X : 28|12@1+ (0.0625,0) [0|250] "m" Vector__XXX
+ SG_ CIPV_Flag : 26|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Obstacle_Lane : 24|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Obstacle_Age : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ Obstacle_Width : 8|8@1+ (0.05,0) [0|12.5] "m" Vector__XXX
+ SG_ Obstacle_Length : 0|8@1+ (0.5,0) [0|31] "m" Vector__XXX
+
+BO_ 1849 Obstacle0_Data_A: 8 Vector__XXX
+ SG_ Obstacle_Valid : 62|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Obstacle_Brake_Lights : 59|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Obstacle_Status : 56|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Obstacle_Type : 52|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Obstacle_Relative_Velocity_X : 40|12@1- (0.0625,0) [-127.93|127.93] "m/s" Vector__XXX
+ SG_ Cut_In_and_Out : 37|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Blinker_Info : 34|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Obstacle_Position_Y : 24|10@1- (0.0625,0) [-31.93|31.93] "m" Vector__XXX
+ SG_ Obstacle_Position_X : 8|12@1+ (0.0625,0) [0|250] "m" Vector__XXX
+ SG_ Obstacle_ID : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 1848 Obstacle_statues: 6 Vector__XXX
+ SG_ Failsafe : 41|4@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Close_Car : 40|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Go : 28|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ Right_Close_Rang_Cut_In : 27|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Left_Close_Rang_Cut_In : 26|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Timestamp : 8|8@1+ (1,0) [0|255] "ms" Vector__XXX
+ SG_ Number_of_Obstacles : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 1847 Lane: 8 Vector__XXX
+ SG_ Pitch_Angle : 48|16@1+ (1.9073486328125E-006,-0.0624980926513672) [-0.05|0.05] "rad" Vector__XXX
+ SG_ Yaw_Angle : 32|16@1+ (0.0009765625,-31.9990234375) [-31.9990234375|32] "rad" Vector__XXX
+ SG_ Left_LDW_Availability : 30|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Right_LDW_Availability : 29|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Construction_Area : 28|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Lane_Heading : 16|12@1- (0.0005,0) [-1|1] "" Vector__XXX
+ SG_ Lane_Curvature : 0|16@1- (3.81E-006,0) [-0.12|0.12] "1/m" Vector__XXX
+
+
+
+CM_ BO_ 3221225472 "This is a message for not used signals, created by Vector CANdb++ DBC OLE DB Provider.";
+CM_ BO_ 1887 "This message contains obstacle detection information and measurements";
+CM_ SG_ 1887 Obstacle_Angle "The angle error can have errors with correlation to the distance measurements errorAngle rate of Center of Obstacle in degrees/sec. 
+A negative angle rate indicates that the obstacle has moved to the left 
+This value is calculated  point in two consecutive frames.";
+CM_ SG_ 1887 Obstacle_Replaced "0 Not replaced in this frame
+1 Replace in this frame";
+CM_ BO_ 1886 "This message contains obstacle detection information and measurements";
+CM_ SG_ 1886 Matched_Radar_ID "ID of Primary radar target matched to the vision target if applicable.";
+CM_ SG_ 1886 Radar_Match_Confidence "0: No match
+1: Multi match, radar does not describe well the vision obstacle.
+2-4: vision - radar match, with bounded error higher match confidence yield smaller error
+5: high confidence match, with small error between Radar and vision measurement";
+CM_ SG_ 1886 Radar_Velocity_X "The longitude velocity of the radar target matched to the vision targets (if applicable). 
+If no radar target is matched, the value will be 0xFFF";
+CM_ SG_ 1886 Radar_Position_X "The longitude position of the primary radar target matched to the vision target (if applicable), 
+distance is given in relative to the reference point and not the camera. 
+If no radar target is matched, the value will be 0xFFFh.";
+CM_ SG_ 1886 CIPV_Flag "This value is calculated from the obstacle position and
+ the lane detection or the headway model (yaw rate based or vision based) of the vehicle.
+ The lane assignment decision usually takes up to 5 frames from the first detection of the obstacle";
+CM_ SG_ 1886 Obstacle_Age "The age of the obstacle (in frames). 
+This value starts at 1 when the obstacle is first detected, and increments in 1 each frame. 
+The value reported is minimum (realAge, 254), which means that it remains 254 if the age is larger than that number.";
+CM_ SG_ 1886 Obstacle_Width "This value is calculated from the width in the image and the obstacle distance. 
+filtered  error < 10% of the width in 90% of the cases. 
+At night, the width measured is between the obstacle¡¯s taillights.";
+CM_ SG_ 1886 Obstacle_Length "The length of the obstacle (longitude axis). 
+Updated only for next lane vehicles that are fully seen, and only if the system has found the front edge of the vehicle. 
+We don¡¯t have recent information regarding the signal¡¯s accuracy.";
+CM_ BO_ 1885 "This message contains obstacle detection information and measurements";
+CM_ SG_ 1885 Obstacle_Type "Enumerator signal, which indicates the object's classification";
+CM_ SG_ 1885 Obstacle_Relative_Velocity_X "The relative longitude velocity of the obstacle. 
+This field is computed from the obstacle scale change in the image.
+The value is a single frame value";
+CM_ SG_ 1885 Blinker_Info "Indicated Blinkers status";
+CM_ SG_ 1885 Obstacle_Position_X "relative to the reference point. computed from the image position of the obstacle and from the detected width of the obstacle. 
+value is filtered to provide smooth measurements. error is below 10% or 2 meters (the larger of the two) in ~85% of the cases.";
+CM_ SG_ 1885 Obstacle_ID "New obstacles are given the last used free ID";
+CM_ BO_ 1884 "This message contains obstacle detection information and measurements";
+CM_ SG_ 1884 Obstacle_Angle "The angle error can have errors with correlation to the distance measurements errorAngle rate of Center of Obstacle in degrees/sec. 
+A negative angle rate indicates that the obstacle has moved to the left 
+This value is calculated  point in two consecutive frames.";
+CM_ SG_ 1884 Obstacle_Replaced "0 Not replaced in this frame
+1 Replace in this frame";
+CM_ BO_ 1883 "This message contains obstacle detection information and measurements";
+CM_ SG_ 1883 Matched_Radar_ID "ID of Primary radar target matched to the vision target if applicable.";
+CM_ SG_ 1883 Radar_Match_Confidence "0: No match
+1: Multi match, radar does not describe well the vision obstacle.
+2-4: vision - radar match, with bounded error higher match confidence yield smaller error
+5: high confidence match, with small error between Radar and vision measurement";
+CM_ SG_ 1883 Radar_Velocity_X "The longitude velocity of the radar target matched to the vision targets (if applicable). 
+If no radar target is matched, the value will be 0xFFF";
+CM_ SG_ 1883 Radar_Position_X "The longitude position of the primary radar target matched to the vision target (if applicable), 
+distance is given in relative to the reference point and not the camera. 
+If no radar target is matched, the value will be 0xFFFh.";
+CM_ SG_ 1883 CIPV_Flag "This value is calculated from the obstacle position and
+ the lane detection or the headway model (yaw rate based or vision based) of the vehicle.
+ The lane assignment decision usually takes up to 5 frames from the first detection of the obstacle";
+CM_ SG_ 1883 Obstacle_Age "The age of the obstacle (in frames). 
+This value starts at 1 when the obstacle is first detected, and increments in 1 each frame. 
+The value reported is minimum (realAge, 254), which means that it remains 254 if the age is larger than that number.";
+CM_ SG_ 1883 Obstacle_Width "This value is calculated from the width in the image and the obstacle distance. 
+filtered  error < 10% of the width in 90% of the cases. 
+At night, the width measured is between the obstacle¡¯s taillights.";
+CM_ SG_ 1883 Obstacle_Length "The length of the obstacle (longitude axis). 
+Updated only for next lane vehicles that are fully seen, and only if the system has found the front edge of the vehicle. 
+We don¡¯t have recent information regarding the signal¡¯s accuracy.";
+CM_ BO_ 1882 "This message contains obstacle detection information and measurements";
+CM_ SG_ 1882 Obstacle_Type "Enumerator signal, which indicates the object's classification";
+CM_ SG_ 1882 Obstacle_Relative_Velocity_X "The relative longitude velocity of the obstacle. 
+This field is computed from the obstacle scale change in the image.
+The value is a single frame value";
+CM_ SG_ 1882 Blinker_Info "Indicated Blinkers status";
+CM_ SG_ 1882 Obstacle_Position_X "relative to the reference point. computed from the image position of the obstacle and from the detected width of the obstacle. 
+value is filtered to provide smooth measurements. error is below 10% or 2 meters (the larger of the two) in ~85% of the cases.";
+CM_ SG_ 1882 Obstacle_ID "New obstacles are given the last used free ID";
+CM_ BO_ 1881 "This message contains obstacle detection information and measurements";
+CM_ SG_ 1881 Obstacle_Angle "The angle error can have errors with correlation to the distance measurements errorAngle rate of Center of Obstacle in degrees/sec. 
+A negative angle rate indicates that the obstacle has moved to the left 
+This value is calculated  point in two consecutive frames.";
+CM_ SG_ 1881 Obstacle_Replaced "0 Not replaced in this frame
+1 Replace in this frame";
+CM_ BO_ 1880 "This message contains obstacle detection information and measurements";
+CM_ SG_ 1880 Matched_Radar_ID "ID of Primary radar target matched to the vision target if applicable.";
+CM_ SG_ 1880 Radar_Match_Confidence "0: No match
+1: Multi match, radar does not describe well the vision obstacle.
+2-4: vision - radar match, with bounded error higher match confidence yield smaller error
+5: high confidence match, with small error between Radar and vision measurement";
+CM_ SG_ 1880 Radar_Velocity_X "The longitude velocity of the radar target matched to the vision targets (if applicable). 
+If no radar target is matched, the value will be 0xFFF";
+CM_ SG_ 1880 Radar_Position_X "The longitude position of the primary radar target matched to the vision target (if applicable), 
+distance is given in relative to the reference point and not the camera. 
+If no radar target is matched, the value will be 0xFFFh.";
+CM_ SG_ 1880 CIPV_Flag "This value is calculated from the obstacle position and
+ the lane detection or the headway model (yaw rate based or vision based) of the vehicle.
+ The lane assignment decision usually takes up to 5 frames from the first detection of the obstacle";
+CM_ SG_ 1880 Obstacle_Age "The age of the obstacle (in frames). 
+This value starts at 1 when the obstacle is first detected, and increments in 1 each frame. 
+The value reported is minimum (realAge, 254), which means that it remains 254 if the age is larger than that number.";
+CM_ SG_ 1880 Obstacle_Width "This value is calculated from the width in the image and the obstacle distance. 
+filtered  error < 10% of the width in 90% of the cases. 
+At night, the width measured is between the obstacle¡¯s taillights.";
+CM_ SG_ 1880 Obstacle_Length "The length of the obstacle (longitude axis). 
+Updated only for next lane vehicles that are fully seen, and only if the system has found the front edge of the vehicle. 
+We don¡¯t have recent information regarding the signal¡¯s accuracy.";
+CM_ BO_ 1879 "This message contains obstacle detection information and measurements";
+CM_ SG_ 1879 Obstacle_Type "Enumerator signal, which indicates the object's classification";
+CM_ SG_ 1879 Obstacle_Relative_Velocity_X "The relative longitude velocity of the obstacle. 
+This field is computed from the obstacle scale change in the image.
+The value is a single frame value";
+CM_ SG_ 1879 Blinker_Info "Indicated Blinkers status";
+CM_ SG_ 1879 Obstacle_Position_X "relative to the reference point. computed from the image position of the obstacle and from the detected width of the obstacle. 
+value is filtered to provide smooth measurements. error is below 10% or 2 meters (the larger of the two) in ~85% of the cases.";
+CM_ SG_ 1879 Obstacle_ID "New obstacles are given the last used free ID";
+CM_ BO_ 1878 "This message contains obstacle detection information and measurements";
+CM_ SG_ 1878 Obstacle_Angle "The angle error can have errors with correlation to the distance measurements errorAngle rate of Center of Obstacle in degrees/sec. 
+A negative angle rate indicates that the obstacle has moved to the left 
+This value is calculated  point in two consecutive frames.";
+CM_ SG_ 1878 Obstacle_Replaced "0 Not replaced in this frame
+1 Replace in this frame";
+CM_ BO_ 1877 "This message contains obstacle detection information and measurements";
+CM_ SG_ 1877 Matched_Radar_ID "ID of Primary radar target matched to the vision target if applicable.";
+CM_ SG_ 1877 Radar_Match_Confidence "0: No match
+1: Multi match, radar does not describe well the vision obstacle.
+2-4: vision - radar match, with bounded error higher match confidence yield smaller error
+5: high confidence match, with small error between Radar and vision measurement";
+CM_ SG_ 1877 Radar_Velocity_X "The longitude velocity of the radar target matched to the vision targets (if applicable). 
+If no radar target is matched, the value will be 0xFFF";
+CM_ SG_ 1877 Radar_Position_X "The longitude position of the primary radar target matched to the vision target (if applicable), 
+distance is given in relative to the reference point and not the camera. 
+If no radar target is matched, the value will be 0xFFFh.";
+CM_ SG_ 1877 CIPV_Flag "This value is calculated from the obstacle position and
+ the lane detection or the headway model (yaw rate based or vision based) of the vehicle.
+ The lane assignment decision usually takes up to 5 frames from the first detection of the obstacle";
+CM_ SG_ 1877 Obstacle_Age "The age of the obstacle (in frames). 
+This value starts at 1 when the obstacle is first detected, and increments in 1 each frame. 
+The value reported is minimum (realAge, 254), which means that it remains 254 if the age is larger than that number.";
+CM_ SG_ 1877 Obstacle_Width "This value is calculated from the width in the image and the obstacle distance. 
+filtered  error < 10% of the width in 90% of the cases. 
+At night, the width measured is between the obstacle¡¯s taillights.";
+CM_ SG_ 1877 Obstacle_Length "The length of the obstacle (longitude axis). 
+Updated only for next lane vehicles that are fully seen, and only if the system has found the front edge of the vehicle. 
+We don¡¯t have recent information regarding the signal¡¯s accuracy.";
+CM_ BO_ 1876 "This message contains obstacle detection information and measurements";
+CM_ SG_ 1876 Obstacle_Type "Enumerator signal, which indicates the object's classification";
+CM_ SG_ 1876 Obstacle_Relative_Velocity_X "The relative longitude velocity of the obstacle. 
+This field is computed from the obstacle scale change in the image.
+The value is a single frame value";
+CM_ SG_ 1876 Blinker_Info "Indicated Blinkers status";
+CM_ SG_ 1876 Obstacle_Position_X "relative to the reference point. computed from the image position of the obstacle and from the detected width of the obstacle. 
+value is filtered to provide smooth measurements. error is below 10% or 2 meters (the larger of the two) in ~85% of the cases.";
+CM_ SG_ 1876 Obstacle_ID "New obstacles are given the last used free ID";
+CM_ BO_ 1875 "This message contains obstacle detection information and measurements";
+CM_ SG_ 1875 Obstacle_Angle "The angle error can have errors with correlation to the distance measurements errorAngle rate of Center of Obstacle in degrees/sec. 
+A negative angle rate indicates that the obstacle has moved to the left 
+This value is calculated  point in two consecutive frames.";
+CM_ SG_ 1875 Obstacle_Replaced "0 Not replaced in this frame
+1 Replace in this frame";
+CM_ BO_ 1874 "This message contains obstacle detection information and measurements";
+CM_ SG_ 1874 Matched_Radar_ID "ID of Primary radar target matched to the vision target if applicable.";
+CM_ SG_ 1874 Radar_Match_Confidence "0: No match
+1: Multi match, radar does not describe well the vision obstacle.
+2-4: vision - radar match, with bounded error higher match confidence yield smaller error
+5: high confidence match, with small error between Radar and vision measurement";
+CM_ SG_ 1874 Radar_Velocity_X "The longitude velocity of the radar target matched to the vision targets (if applicable). 
+If no radar target is matched, the value will be 0xFFF";
+CM_ SG_ 1874 Radar_Position_X "The longitude position of the primary radar target matched to the vision target (if applicable), 
+distance is given in relative to the reference point and not the camera. 
+If no radar target is matched, the value will be 0xFFFh.";
+CM_ SG_ 1874 CIPV_Flag "This value is calculated from the obstacle position and
+ the lane detection or the headway model (yaw rate based or vision based) of the vehicle.
+ The lane assignment decision usually takes up to 5 frames from the first detection of the obstacle";
+CM_ SG_ 1874 Obstacle_Age "The age of the obstacle (in frames). 
+This value starts at 1 when the obstacle is first detected, and increments in 1 each frame. 
+The value reported is minimum (realAge, 254), which means that it remains 254 if the age is larger than that number.";
+CM_ SG_ 1874 Obstacle_Width "This value is calculated from the width in the image and the obstacle distance. 
+filtered  error < 10% of the width in 90% of the cases. 
+At night, the width measured is between the obstacle¡¯s taillights.";
+CM_ SG_ 1874 Obstacle_Length "The length of the obstacle (longitude axis). 
+Updated only for next lane vehicles that are fully seen, and only if the system has found the front edge of the vehicle. 
+We don¡¯t have recent information regarding the signal¡¯s accuracy.";
+CM_ BO_ 1873 "This message contains obstacle detection information and measurements";
+CM_ SG_ 1873 Obstacle_Type "Enumerator signal, which indicates the object's classification";
+CM_ SG_ 1873 Obstacle_Relative_Velocity_X "The relative longitude velocity of the obstacle. 
+This field is computed from the obstacle scale change in the image.
+The value is a single frame value";
+CM_ SG_ 1873 Blinker_Info "Indicated Blinkers status";
+CM_ SG_ 1873 Obstacle_Position_X "relative to the reference point. computed from the image position of the obstacle and from the detected width of the obstacle. 
+value is filtered to provide smooth measurements. error is below 10% or 2 meters (the larger of the two) in ~85% of the cases.";
+CM_ SG_ 1873 Obstacle_ID "New obstacles are given the last used free ID";
+CM_ BO_ 1872 "This message contains obstacle detection information and measurements";
+CM_ SG_ 1872 Obstacle_Angle "The angle error can have errors with correlation to the distance measurements errorAngle rate of Center of Obstacle in degrees/sec. 
+A negative angle rate indicates that the obstacle has moved to the left 
+This value is calculated  point in two consecutive frames.";
+CM_ SG_ 1872 Obstacle_Replaced "0 Not replaced in this frame
+1 Replace in this frame";
+CM_ BO_ 1871 "This message contains obstacle detection information and measurements";
+CM_ SG_ 1871 Matched_Radar_ID "ID of Primary radar target matched to the vision target if applicable.";
+CM_ SG_ 1871 Radar_Match_Confidence "0: No match
+1: Multi match, radar does not describe well the vision obstacle.
+2-4: vision - radar match, with bounded error higher match confidence yield smaller error
+5: high confidence match, with small error between Radar and vision measurement";
+CM_ SG_ 1871 Radar_Velocity_X "The longitude velocity of the radar target matched to the vision targets (if applicable). 
+If no radar target is matched, the value will be 0xFFF";
+CM_ SG_ 1871 Radar_Position_X "The longitude position of the primary radar target matched to the vision target (if applicable), 
+distance is given in relative to the reference point and not the camera. 
+If no radar target is matched, the value will be 0xFFFh.";
+CM_ SG_ 1871 CIPV_Flag "This value is calculated from the obstacle position and
+ the lane detection or the headway model (yaw rate based or vision based) of the vehicle.
+ The lane assignment decision usually takes up to 5 frames from the first detection of the obstacle";
+CM_ SG_ 1871 Obstacle_Age "The age of the obstacle (in frames). 
+This value starts at 1 when the obstacle is first detected, and increments in 1 each frame. 
+The value reported is minimum (realAge, 254), which means that it remains 254 if the age is larger than that number.";
+CM_ SG_ 1871 Obstacle_Width "This value is calculated from the width in the image and the obstacle distance. 
+filtered  error < 10% of the width in 90% of the cases. 
+At night, the width measured is between the obstacle¡¯s taillights.";
+CM_ SG_ 1871 Obstacle_Length "The length of the obstacle (longitude axis). 
+Updated only for next lane vehicles that are fully seen, and only if the system has found the front edge of the vehicle. 
+We don¡¯t have recent information regarding the signal¡¯s accuracy.";
+CM_ BO_ 1870 "This message contains obstacle detection information and measurements";
+CM_ SG_ 1870 Obstacle_Type "Enumerator signal, which indicates the object's classification";
+CM_ SG_ 1870 Obstacle_Relative_Velocity_X "The relative longitude velocity of the obstacle. 
+This field is computed from the obstacle scale change in the image.
+The value is a single frame value";
+CM_ SG_ 1870 Blinker_Info "Indicated Blinkers status";
+CM_ SG_ 1870 Obstacle_Position_X "relative to the reference point. computed from the image position of the obstacle and from the detected width of the obstacle. 
+value is filtered to provide smooth measurements. error is below 10% or 2 meters (the larger of the two) in ~85% of the cases.";
+CM_ SG_ 1870 Obstacle_ID "New obstacles are given the last used free ID";
+CM_ BO_ 1869 "This message contains obstacle detection information and measurements";
+CM_ SG_ 1869 Obstacle_Angle "The angle error can have errors with correlation to the distance measurements errorAngle rate of Center of Obstacle in degrees/sec. 
+A negative angle rate indicates that the obstacle has moved to the left 
+This value is calculated  point in two consecutive frames.";
+CM_ SG_ 1869 Obstacle_Replaced "0 Not replaced in this frame
+1 Replace in this frame";
+CM_ BO_ 1868 "This message contains obstacle detection information and measurements";
+CM_ SG_ 1868 Matched_Radar_ID "ID of Primary radar target matched to the vision target if applicable.";
+CM_ SG_ 1868 Radar_Match_Confidence "0: No match
+1: Multi match, radar does not describe well the vision obstacle.
+2-4: vision - radar match, with bounded error higher match confidence yield smaller error
+5: high confidence match, with small error between Radar and vision measurement";
+CM_ SG_ 1868 Radar_Velocity_X "The longitude velocity of the radar target matched to the vision targets (if applicable). 
+If no radar target is matched, the value will be 0xFFF";
+CM_ SG_ 1868 Radar_Position_X "The longitude position of the primary radar target matched to the vision target (if applicable), 
+distance is given in relative to the reference point and not the camera. 
+If no radar target is matched, the value will be 0xFFFh.";
+CM_ SG_ 1868 CIPV_Flag "This value is calculated from the obstacle position and
+ the lane detection or the headway model (yaw rate based or vision based) of the vehicle.
+ The lane assignment decision usually takes up to 5 frames from the first detection of the obstacle";
+CM_ SG_ 1868 Obstacle_Age "The age of the obstacle (in frames). 
+This value starts at 1 when the obstacle is first detected, and increments in 1 each frame. 
+The value reported is minimum (realAge, 254), which means that it remains 254 if the age is larger than that number.";
+CM_ SG_ 1868 Obstacle_Width "This value is calculated from the width in the image and the obstacle distance. 
+filtered  error < 10% of the width in 90% of the cases. 
+At night, the width measured is between the obstacle¡¯s taillights.";
+CM_ SG_ 1868 Obstacle_Length "The length of the obstacle (longitude axis). 
+Updated only for next lane vehicles that are fully seen, and only if the system has found the front edge of the vehicle. 
+We don¡¯t have recent information regarding the signal¡¯s accuracy.";
+CM_ BO_ 1867 "This message contains obstacle detection information and measurements";
+CM_ SG_ 1867 Obstacle_Type "Enumerator signal, which indicates the object's classification";
+CM_ SG_ 1867 Obstacle_Relative_Velocity_X "The relative longitude velocity of the obstacle. 
+This field is computed from the obstacle scale change in the image.
+The value is a single frame value";
+CM_ SG_ 1867 Blinker_Info "Indicated Blinkers status";
+CM_ SG_ 1867 Obstacle_Position_X "relative to the reference point. computed from the image position of the obstacle and from the detected width of the obstacle. 
+value is filtered to provide smooth measurements. error is below 10% or 2 meters (the larger of the two) in ~85% of the cases.";
+CM_ SG_ 1867 Obstacle_ID "New obstacles are given the last used free ID";
+CM_ BO_ 1866 "This message contains obstacle detection information and measurements";
+CM_ SG_ 1866 Obstacle_Angle "The angle error can have errors with correlation to the distance measurements errorAngle rate of Center of Obstacle in degrees/sec. 
+A negative angle rate indicates that the obstacle has moved to the left 
+This value is calculated  point in two consecutive frames.";
+CM_ SG_ 1866 Obstacle_Replaced "0 Not replaced in this frame
+1 Replace in this frame";
+CM_ BO_ 1865 "This message contains obstacle detection information and measurements";
+CM_ SG_ 1865 Matched_Radar_ID "ID of Primary radar target matched to the vision target if applicable.";
+CM_ SG_ 1865 Radar_Match_Confidence "0: No match
+1: Multi match, radar does not describe well the vision obstacle.
+2-4: vision - radar match, with bounded error higher match confidence yield smaller error
+5: high confidence match, with small error between Radar and vision measurement";
+CM_ SG_ 1865 Radar_Velocity_X "The longitude velocity of the radar target matched to the vision targets (if applicable). 
+If no radar target is matched, the value will be 0xFFF";
+CM_ SG_ 1865 Radar_Position_X "The longitude position of the primary radar target matched to the vision target (if applicable), 
+distance is given in relative to the reference point and not the camera. 
+If no radar target is matched, the value will be 0xFFFh.";
+CM_ SG_ 1865 CIPV_Flag "This value is calculated from the obstacle position and
+ the lane detection or the headway model (yaw rate based or vision based) of the vehicle.
+ The lane assignment decision usually takes up to 5 frames from the first detection of the obstacle";
+CM_ SG_ 1865 Obstacle_Age "The age of the obstacle (in frames). 
+This value starts at 1 when the obstacle is first detected, and increments in 1 each frame. 
+The value reported is minimum (realAge, 254), which means that it remains 254 if the age is larger than that number.";
+CM_ SG_ 1865 Obstacle_Width "This value is calculated from the width in the image and the obstacle distance. 
+filtered  error < 10% of the width in 90% of the cases. 
+At night, the width measured is between the obstacle¡¯s taillights.";
+CM_ SG_ 1865 Obstacle_Length "The length of the obstacle (longitude axis). 
+Updated only for next lane vehicles that are fully seen, and only if the system has found the front edge of the vehicle. 
+We don¡¯t have recent information regarding the signal¡¯s accuracy.";
+CM_ BO_ 1864 "This message contains obstacle detection information and measurements";
+CM_ SG_ 1864 Obstacle_Type "Enumerator signal, which indicates the object's classification";
+CM_ SG_ 1864 Obstacle_Relative_Velocity_X "The relative longitude velocity of the obstacle. 
+This field is computed from the obstacle scale change in the image.
+The value is a single frame value";
+CM_ SG_ 1864 Blinker_Info "Indicated Blinkers status";
+CM_ SG_ 1864 Obstacle_Position_X "relative to the reference point. computed from the image position of the obstacle and from the detected width of the obstacle. 
+value is filtered to provide smooth measurements. error is below 10% or 2 meters (the larger of the two) in ~85% of the cases.";
+CM_ SG_ 1864 Obstacle_ID "New obstacles are given the last used free ID";
+CM_ BO_ 1863 "This message contains obstacle detection information and measurements";
+CM_ SG_ 1863 Obstacle_Angle "The angle error can have errors with correlation to the distance measurements errorAngle rate of Center of Obstacle in degrees/sec. 
+A negative angle rate indicates that the obstacle has moved to the left 
+This value is calculated  point in two consecutive frames.";
+CM_ SG_ 1863 Obstacle_Replaced "0 Not replaced in this frame
+1 Replace in this frame";
+CM_ BO_ 1862 "This message contains obstacle detection information and measurements";
+CM_ SG_ 1862 Matched_Radar_ID "ID of Primary radar target matched to the vision target if applicable.";
+CM_ SG_ 1862 Radar_Match_Confidence "0: No match
+1: Multi match, radar does not describe well the vision obstacle.
+2-4: vision - radar match, with bounded error higher match confidence yield smaller error
+5: high confidence match, with small error between Radar and vision measurement";
+CM_ SG_ 1862 Radar_Velocity_X "The longitude velocity of the radar target matched to the vision targets (if applicable). 
+If no radar target is matched, the value will be 0xFFF";
+CM_ SG_ 1862 Radar_Position_X "The longitude position of the primary radar target matched to the vision target (if applicable), 
+distance is given in relative to the reference point and not the camera. 
+If no radar target is matched, the value will be 0xFFFh.";
+CM_ SG_ 1862 CIPV_Flag "This value is calculated from the obstacle position and
+ the lane detection or the headway model (yaw rate based or vision based) of the vehicle.
+ The lane assignment decision usually takes up to 5 frames from the first detection of the obstacle";
+CM_ SG_ 1862 Obstacle_Age "The age of the obstacle (in frames). 
+This value starts at 1 when the obstacle is first detected, and increments in 1 each frame. 
+The value reported is minimum (realAge, 254), which means that it remains 254 if the age is larger than that number.";
+CM_ SG_ 1862 Obstacle_Width "This value is calculated from the width in the image and the obstacle distance. 
+filtered  error < 10% of the width in 90% of the cases. 
+At night, the width measured is between the obstacle¡¯s taillights.";
+CM_ SG_ 1862 Obstacle_Length "The length of the obstacle (longitude axis). 
+Updated only for next lane vehicles that are fully seen, and only if the system has found the front edge of the vehicle. 
+We don¡¯t have recent information regarding the signal¡¯s accuracy.";
+CM_ BO_ 1861 "This message contains obstacle detection information and measurements";
+CM_ SG_ 1861 Obstacle_Type "Enumerator signal, which indicates the object's classification";
+CM_ SG_ 1861 Obstacle_Relative_Velocity_X "The relative longitude velocity of the obstacle. 
+This field is computed from the obstacle scale change in the image.
+The value is a single frame value";
+CM_ SG_ 1861 Blinker_Info "Indicated Blinkers status";
+CM_ SG_ 1861 Obstacle_Position_X "relative to the reference point. computed from the image position of the obstacle and from the detected width of the obstacle. 
+value is filtered to provide smooth measurements. error is below 10% or 2 meters (the larger of the two) in ~85% of the cases.";
+CM_ SG_ 1861 Obstacle_ID "New obstacles are given the last used free ID";
+CM_ BO_ 1860 "This message contains obstacle detection information and measurements";
+CM_ SG_ 1860 Obstacle_Angle "The angle error can have errors with correlation to the distance measurements errorAngle rate of Center of Obstacle in degrees/sec. 
+A negative angle rate indicates that the obstacle has moved to the left 
+This value is calculated  point in two consecutive frames.";
+CM_ SG_ 1860 Obstacle_Replaced "0 Not replaced in this frame
+1 Replace in this frame";
+CM_ BO_ 1859 "This message contains obstacle detection information and measurements";
+CM_ SG_ 1859 Matched_Radar_ID "ID of Primary radar target matched to the vision target if applicable.";
+CM_ SG_ 1859 Radar_Match_Confidence "0: No match
+1: Multi match, radar does not describe well the vision obstacle.
+2-4: vision - radar match, with bounded error higher match confidence yield smaller error
+5: high confidence match, with small error between Radar and vision measurement";
+CM_ SG_ 1859 Radar_Velocity_X "The longitude velocity of the radar target matched to the vision targets (if applicable). 
+If no radar target is matched, the value will be 0xFFF";
+CM_ SG_ 1859 Radar_Position_X "The longitude position of the primary radar target matched to the vision target (if applicable), 
+distance is given in relative to the reference point and not the camera. 
+If no radar target is matched, the value will be 0xFFFh.";
+CM_ SG_ 1859 CIPV_Flag "This value is calculated from the obstacle position and
+ the lane detection or the headway model (yaw rate based or vision based) of the vehicle.
+ The lane assignment decision usually takes up to 5 frames from the first detection of the obstacle";
+CM_ SG_ 1859 Obstacle_Age "The age of the obstacle (in frames). 
+This value starts at 1 when the obstacle is first detected, and increments in 1 each frame. 
+The value reported is minimum (realAge, 254), which means that it remains 254 if the age is larger than that number.";
+CM_ SG_ 1859 Obstacle_Width "This value is calculated from the width in the image and the obstacle distance. 
+filtered  error < 10% of the width in 90% of the cases. 
+At night, the width measured is between the obstacle¡¯s taillights.";
+CM_ SG_ 1859 Obstacle_Length "The length of the obstacle (longitude axis). 
+Updated only for next lane vehicles that are fully seen, and only if the system has found the front edge of the vehicle. 
+We don¡¯t have recent information regarding the signal¡¯s accuracy.";
+CM_ BO_ 1858 "This message contains obstacle detection information and measurements";
+CM_ SG_ 1858 Obstacle_Type "Enumerator signal, which indicates the object's classification";
+CM_ SG_ 1858 Obstacle_Relative_Velocity_X "The relative longitude velocity of the obstacle. 
+This field is computed from the obstacle scale change in the image.
+The value is a single frame value";
+CM_ SG_ 1858 Blinker_Info "Indicated Blinkers status";
+CM_ SG_ 1858 Obstacle_Position_X "relative to the reference point. computed from the image position of the obstacle and from the detected width of the obstacle. 
+value is filtered to provide smooth measurements. error is below 10% or 2 meters (the larger of the two) in ~85% of the cases.";
+CM_ SG_ 1858 Obstacle_ID "New obstacles are given the last used free ID";
+CM_ BO_ 1857 "This message contains obstacle detection information and measurements";
+CM_ SG_ 1857 Obstacle_Angle "The angle error can have errors with correlation to the distance measurements errorAngle rate of Center of Obstacle in degrees/sec. 
+A negative angle rate indicates that the obstacle has moved to the left 
+This value is calculated  point in two consecutive frames.";
+CM_ SG_ 1857 Obstacle_Replaced "0 Not replaced in this frame
+1 Replace in this frame";
+CM_ BO_ 1856 "This message contains obstacle detection information and measurements";
+CM_ SG_ 1856 Matched_Radar_ID "ID of Primary radar target matched to the vision target if applicable.";
+CM_ SG_ 1856 Radar_Match_Confidence "0: No match
+1: Multi match, radar does not describe well the vision obstacle.
+2-4: vision - radar match, with bounded error higher match confidence yield smaller error
+5: high confidence match, with small error between Radar and vision measurement";
+CM_ SG_ 1856 Radar_Velocity_X "The longitude velocity of the radar target matched to the vision targets (if applicable). 
+If no radar target is matched, the value will be 0xFFF";
+CM_ SG_ 1856 Radar_Position_X "The longitude position of the primary radar target matched to the vision target (if applicable), 
+distance is given in relative to the reference point and not the camera. 
+If no radar target is matched, the value will be 0xFFFh.";
+CM_ SG_ 1856 CIPV_Flag "This value is calculated from the obstacle position and
+ the lane detection or the headway model (yaw rate based or vision based) of the vehicle.
+ The lane assignment decision usually takes up to 5 frames from the first detection of the obstacle";
+CM_ SG_ 1856 Obstacle_Age "The age of the obstacle (in frames). 
+This value starts at 1 when the obstacle is first detected, and increments in 1 each frame. 
+The value reported is minimum (realAge, 254), which means that it remains 254 if the age is larger than that number.";
+CM_ SG_ 1856 Obstacle_Width "This value is calculated from the width in the image and the obstacle distance. 
+filtered  error < 10% of the width in 90% of the cases. 
+At night, the width measured is between the obstacle¡¯s taillights.";
+CM_ SG_ 1856 Obstacle_Length "The length of the obstacle (longitude axis). 
+Updated only for next lane vehicles that are fully seen, and only if the system has found the front edge of the vehicle. 
+We don¡¯t have recent information regarding the signal¡¯s accuracy.";
+CM_ BO_ 1855 "This message contains obstacle detection information and measurements";
+CM_ SG_ 1855 Obstacle_Type "Enumerator signal, which indicates the object's classification";
+CM_ SG_ 1855 Obstacle_Relative_Velocity_X "The relative longitude velocity of the obstacle. 
+This field is computed from the obstacle scale change in the image.
+The value is a single frame value";
+CM_ SG_ 1855 Blinker_Info "Indicated Blinkers status";
+CM_ SG_ 1855 Obstacle_Position_X "relative to the reference point. computed from the image position of the obstacle and from the detected width of the obstacle. 
+value is filtered to provide smooth measurements. error is below 10% or 2 meters (the larger of the two) in ~85% of the cases.";
+CM_ SG_ 1855 Obstacle_ID "New obstacles are given the last used free ID";
+CM_ BO_ 1854 "This message contains obstacle detection information and measurements";
+CM_ SG_ 1854 Obstacle_Angle "The angle error can have errors with correlation to the distance measurements errorAngle rate of Center of Obstacle in degrees/sec. 
+A negative angle rate indicates that the obstacle has moved to the left 
+This value is calculated  point in two consecutive frames.";
+CM_ SG_ 1854 Obstacle_Replaced "0 Not replaced in this frame
+1 Replace in this frame";
+CM_ BO_ 1853 "This message contains obstacle detection information and measurements";
+CM_ SG_ 1853 Matched_Radar_ID "ID of Primary radar target matched to the vision target if applicable.";
+CM_ SG_ 1853 Radar_Match_Confidence "0: No match
+1: Multi match, radar does not describe well the vision obstacle.
+2-4: vision - radar match, with bounded error higher match confidence yield smaller error
+5: high confidence match, with small error between Radar and vision measurement";
+CM_ SG_ 1853 Radar_Velocity_X "The longitude velocity of the radar target matched to the vision targets (if applicable). 
+If no radar target is matched, the value will be 0xFFF";
+CM_ SG_ 1853 Radar_Position_X "The longitude position of the primary radar target matched to the vision target (if applicable), 
+distance is given in relative to the reference point and not the camera. 
+If no radar target is matched, the value will be 0xFFFh.";
+CM_ SG_ 1853 CIPV_Flag "This value is calculated from the obstacle position and
+ the lane detection or the headway model (yaw rate based or vision based) of the vehicle.
+ The lane assignment decision usually takes up to 5 frames from the first detection of the obstacle";
+CM_ SG_ 1853 Obstacle_Age "The age of the obstacle (in frames). 
+This value starts at 1 when the obstacle is first detected, and increments in 1 each frame. 
+The value reported is minimum (realAge, 254), which means that it remains 254 if the age is larger than that number.";
+CM_ SG_ 1853 Obstacle_Width "This value is calculated from the width in the image and the obstacle distance. 
+filtered  error < 10% of the width in 90% of the cases. 
+At night, the width measured is between the obstacle¡¯s taillights.";
+CM_ SG_ 1853 Obstacle_Length "The length of the obstacle (longitude axis). 
+Updated only for next lane vehicles that are fully seen, and only if the system has found the front edge of the vehicle. 
+We don¡¯t have recent information regarding the signal¡¯s accuracy.";
+CM_ BO_ 1852 "This message contains obstacle detection information and measurements";
+CM_ SG_ 1852 Obstacle_Type "Enumerator signal, which indicates the object's classification";
+CM_ SG_ 1852 Obstacle_Relative_Velocity_X "The relative longitude velocity of the obstacle. 
+This field is computed from the obstacle scale change in the image.
+The value is a single frame value";
+CM_ SG_ 1852 Blinker_Info "Indicated Blinkers status";
+CM_ SG_ 1852 Obstacle_Position_X "relative to the reference point. computed from the image position of the obstacle and from the detected width of the obstacle. 
+value is filtered to provide smooth measurements. error is below 10% or 2 meters (the larger of the two) in ~85% of the cases.";
+CM_ SG_ 1852 Obstacle_ID "New obstacles are given the last used free ID";
+CM_ SG_ 1792 Right_LDW_On "The LDW will be ON for 5 consecutive frames, no matter how long the event
+really is";
+CM_ SG_ 1792 TSR_Warning_Level "[0-5kmh], level= 1
+[5-10kmh], level= 2
+[10-15kmh], level= 3
+[15-20kmh], level= 4
+[20-25kmh], level= 5
+[25-30kmh], level= 6
+[30-35kmh], level= 7
+35, level= 7";
+CM_ SG_ 1792 Headway_Warning_Level "When no CIPV is present, HW Level = 0
+When a CIPV is present with HW > HW Config, HW Level = 1
+When a CIPV is present with HW ¡Ü HW Config, HW Level = 2
+When a CIPV is present with HW < 0.6, HW Level = 2";
+CM_ SG_ 1792 HW_Repeatable_Enable "Meaning: HW Repeatable feature is ON if configured (1=ON)
+? Note: HW Repeatable configuration is possible only during system
+Configuration/Installation process (via Mobileye Setup Wizard).";
+CM_ SG_ 1792 TSR_Enabled "Meaning: TSR feature is ON.
+? Note: TSR is always ON (bit=1).";
+CM_ SG_ 1792 FCW_On "The FCW will be ON for the entire warning length";
+CM_ SG_ 1792 Failsafe "Indicator of one of the internal FailSafe modes (blur image, saturated
+image, low sun, partial blockage, partial transparent";
+CM_ SG_ 1792 Maintenance "Indicator of internal error. See User Manual";
+CM_ SG_ 1792 Left_LDW_On "The LDW will be ON for 5 consecutive frames, no matter how long the event
+really is";
+CM_ SG_ 1792 LDW_Off "Lane Departure Warnings are disabled when the value is equal 1 (due to
+low speed or configuration).";
+CM_ SG_ 1792 Error_Code "When Error Valid bit is on, the Error Code filed will contain an error code,
+as indicated in the User Manual";
+CM_ SG_ 1792 Peds_in_DZ "1= Pedestrian in DZ/warning on pedestrian/waning (FCW) on vehicle
+0= Pedestrian not in DZ/no warning";
+CM_ SG_ 1792 Headway_Valid "When CIPV is detected Headway Valid is ON (bit=1)";
+CM_ SG_ 1792 Zero_Speed "Host vehicle is stopped";
+CM_ BO_ 1851 "This message contains obstacle detection information and measurements";
+CM_ SG_ 1851 Obstacle_Angle "The angle error can have errors with correlation to the distance measurements errorAngle rate of Center of Obstacle in degrees/sec. 
+A negative angle rate indicates that the obstacle has moved to the left 
+This value is calculated  point in two consecutive frames.";
+CM_ SG_ 1851 Obstacle_Replaced "0 Not replaced in this frame
+1 Replace in this frame";
+CM_ BO_ 1850 "This message contains obstacle detection information and measurements";
+CM_ SG_ 1850 Matched_Radar_ID "ID of Primary radar target matched to the vision target if applicable.";
+CM_ SG_ 1850 Radar_Match_Confidence "0: No match
+1: Multi match, radar does not describe well the vision obstacle.
+2-4: vision - radar match, with bounded error higher match confidence yield smaller error
+5: high confidence match, with small error between Radar and vision measurement";
+CM_ SG_ 1850 Radar_Velocity_X "The longitude velocity of the radar target matched to the vision targets (if applicable). 
+If no radar target is matched, the value will be 0xFFF";
+CM_ SG_ 1850 Radar_Position_X "The longitude position of the primary radar target matched to the vision target (if applicable), 
+distance is given in relative to the reference point and not the camera. 
+If no radar target is matched, the value will be 0xFFFh.";
+CM_ SG_ 1850 CIPV_Flag "This value is calculated from the obstacle position and
+ the lane detection or the headway model (yaw rate based or vision based) of the vehicle.
+ The lane assignment decision usually takes up to 5 frames from the first detection of the obstacle";
+CM_ SG_ 1850 Obstacle_Age "The age of the obstacle (in frames). 
+This value starts at 1 when the obstacle is first detected, and increments in 1 each frame. 
+The value reported is minimum (realAge, 254), which means that it remains 254 if the age is larger than that number.";
+CM_ SG_ 1850 Obstacle_Width "This value is calculated from the width in the image and the obstacle distance. 
+filtered  error < 10% of the width in 90% of the cases. 
+At night, the width measured is between the obstacle¡¯s taillights.";
+CM_ SG_ 1850 Obstacle_Length "The length of the obstacle (longitude axis). 
+Updated only for next lane vehicles that are fully seen, and only if the system has found the front edge of the vehicle. 
+We don¡¯t have recent information regarding the signal¡¯s accuracy.";
+CM_ BO_ 1849 "This message contains obstacle detection information and measurements";
+CM_ SG_ 1849 Obstacle_Type "Enumerator signal, which indicates the object's classification";
+CM_ SG_ 1849 Obstacle_Relative_Velocity_X "The relative longitude velocity of the obstacle. 
+This field is computed from the obstacle scale change in the image.
+The value is a single frame value";
+CM_ SG_ 1849 Blinker_Info "Indicated Blinkers status";
+CM_ SG_ 1849 Obstacle_Position_X "relative to the reference point. computed from the image position of the obstacle and from the detected width of the obstacle. 
+value is filtered to provide smooth measurements. error is below 10% or 2 meters (the larger of the two) in ~85% of the cases.";
+CM_ SG_ 1849 Obstacle_ID "New obstacles are given the last used free ID";
+CM_ BO_ 1848 "This message contains the number of obstacles, the timestamp and the application version. 
+Obstacles can be vehicles, Motorcycles or pedestrians.";
+CM_ SG_ 1848 Close_Car "Indication whether we detect a close car in front of the host vehicle or not.";
+CM_ SG_ 1848 Go "Reports only values of 0 or 1 or 15
+Reports Stop or Go decisions only when the own vehicle is standing
+ (having ego speed of less than 0.1 meters per second). Otherwise, the value 15 is reported.";
+CM_ SG_ 1848 Timestamp "Only the lowest 8 bits of the timestamp is given. The timestamp source is from the EyeQ image grabbing";
+CM_ BO_ 1847 "The message contains the Lane information and measurements";
+BA_DEF_ SG_  "GenSigSendType" ENUM  "Cyclic","OnWrite","OnWriteWithRepetition","OnChange","OnChangeWithRepetition","IfActive","IfActiveWithRepetition","NoSigSendType";
+BA_DEF_ BU_  "NmStationAddress" HEX 0 0;
+BA_DEF_  "DBName" STRING ;
+BA_DEF_ SG_  "GenSigInactiveValue" INT 0 0;
+BA_DEF_ BO_  "GenMsgCycleTime" INT 0 0;
+BA_DEF_ BO_  "GenMsgSendType" ENUM  "Cyclic","not_used","not_used","not_used","not_used","Cyclic","not_used","IfActive","NoMsgSendType";
+BA_DEF_  "BusType" STRING ;
+BA_DEF_DEF_  "GenSigSendType" "Cyclic";
+BA_DEF_DEF_  "NmStationAddress" 0;
+BA_DEF_DEF_  "DBName" "";
+BA_DEF_DEF_  "GenSigInactiveValue" 0;
+BA_DEF_DEF_  "GenMsgCycleTime" 0;
+BA_DEF_DEF_  "GenMsgSendType" "NoMsgSendType";
+BA_DEF_DEF_  "BusType" "";
+BA_ "DBName" "Mobileye";
+VAL_ 3221225472 FCW_On 1 "True" 0 "False" ;
+VAL_ 1888 Speed_Available 1 "Available" 0 "Unavailable" ;
+VAL_ 1888 High_Beam_Available 1 "Available" 0 "Unavailable" ;
+VAL_ 1888 Low_Beam_Available 1 "Available" 0 "Unavailable" ;
+VAL_ 1888 Wipers_Available 1 "Available" 0 "Unavailable" ;
+VAL_ 1888 Brake_Signal 1 "On" 0 "Off" ;
+VAL_ 1888 Left_Signal 1 "On" 0 "Off" ;
+VAL_ 1888 Right_Signal 1 "On" 0 "Off" ;
+VAL_ 1888 Wipers 1 "On" 0 "Off" ;
+VAL_ 1888 Low_Beam 1 "On" 0 "Off" ;
+VAL_ 1888 High_Beam 1 "On" 0 "Off" ;
+VAL_ 1915 View_Range_Available 1 "Valid" 0 "Invalid" ;
+VAL_ 1914 Model_Degree 3 "Three_Degree_Model" 2 "Parabolic_Model" 1 "Linear_Model" ;
+VAL_ 1914 Quality 3 "High_Quality" 2 "High_Quality" 1 "Low_Quality" 0 "Low_Quality" ;
+VAL_ 1914 Lane_Type 6 "Invalid" 5 "Botts_Dots" 4 "Double_Lane_Mark" 3 "Road_Edge" 2 "Undecied" 1 "Solid" 0 "Dashed" ;
+VAL_ 1911 View_Range_Available 1 "Valid" 0 "Invalid" ;
+VAL_ 1910 Model_Degree 3 "Three_Degree_Model" 2 "Parabolic_Model" 1 "Linear_Model" ;
+VAL_ 1910 Quality 3 "High_Quality" 2 "High_Quality" 1 "Low_Quality" 0 "Low_Quality" ;
+VAL_ 1910 Lane_Type 6 "Invalid" 5 "Botts_Dots" 4 "Double_Lane_Mark" 3 "Road_Edge" 2 "Undecied" 1 "Solid" 0 "Dashed" ;
+VAL_ 1907 View_Range_Available 1 "Valid" 0 "Invalid" ;
+VAL_ 1906 Model_Degree 3 "Three_Degree_Model" 2 "Parabolic_Model" 1 "Linear_Model" ;
+VAL_ 1906 Quality 3 "High_Quality" 2 "High_Quality" 1 "Low_Quality" 0 "Low_Quality" ;
+VAL_ 1906 Lane_Type 6 "Invalid" 5 "Botts_Dots" 4 "Double_Lane_Mark" 3 "Road_Edge" 2 "Undecied" 1 "Solid" 0 "Dashed" ;
+VAL_ 1903 View_Range_Available 1 "Valid" 0 "Invalid" ;
+VAL_ 1902 Model_Degree 3 "Three_Degree_Model" 2 "Parabolic_Model" 1 "Linear_Model" ;
+VAL_ 1902 Quality 3 "High_Quality" 2 "High_Quality" 1 "Low_Quality" 0 "Low_Quality" ;
+VAL_ 1902 Lane_Type 6 "Invalid" 5 "Botts_Dots" 4 "Double_Lane_Mark" 3 "Road_Edge" 2 "Undecied" 1 "Solid" 0 "Dashed" ;
+VAL_ 1913 View_Range_Available 1 "Valid" 0 "Invalid" ;
+VAL_ 1909 View_Range_Available 1 "Valid" 0 "Invalid" ;
+VAL_ 1905 View_Range_Available 1 "Valid" 0 "Invalid" ;
+VAL_ 1901 View_Range_Available 1 "Valid" 0 "Invalid" ;
+VAL_ 1912 Model_Degree 3 "Three_Degree_Model" 2 "Parabolic_Model" 1 "Linear_Model" ;
+VAL_ 1912 Quality 3 "High_Quality" 2 "High_Quality" 1 "Low_Quality" 0 "Low_Quality" ;
+VAL_ 1912 Lane_Type 6 "Invalid" 5 "Botts_Dots" 4 "Double_Lane_Mark" 3 "Road_Edge" 2 "Undecied" 1 "Solid" 0 "Dashed" ;
+VAL_ 1908 Model_Degree 3 "Three_Degree_Model" 2 "Parabolic_Model" 1 "Linear_Model" ;
+VAL_ 1908 Quality 3 "High_Quality" 2 "High_Quality" 1 "Low_Quality" 0 "Low_Quality" ;
+VAL_ 1908 Lane_Type 6 "Invalid" 5 "Botts_Dots" 4 "Double_Lane_Mark" 3 "Road_Edge" 2 "Undecied" 1 "Solid" 0 "Dashed" ;
+VAL_ 1904 Model_Degree 3 "Three_Degree_Model" 2 "Parabolic_Model" 1 "Linear_Model" ;
+VAL_ 1904 Quality 3 "High_Quality" 2 "High_Quality" 1 "Low_Quality" 0 "Low_Quality" ;
+VAL_ 1904 Lane_Type 6 "Invalid" 5 "Botts_Dots" 4 "Double_Lane_Mark" 3 "Road_Edge" 2 "Undecied" 1 "Solid" 0 "Dashed" ;
+VAL_ 1900 Model_Degree 3 "Three_Degree_Model" 2 "Parabolic_Model" 1 "Linear_Model" ;
+VAL_ 1900 Quality 3 "High_Quality" 2 "High_Quality" 1 "Low_Quality" 0 "Low_Quality" ;
+VAL_ 1900 Lane_Type 6 "Invalid" 5 "Botts_Dots" 4 "Double_Lane_Mark" 3 "Road_Edge" 2 "Undecied" 1 "Solid" 0 "Dashed" ;
+VAL_ 1898 Ref_Point1_Validity 1 "Valid" 0 "Invalid" ;
+VAL_ 1897 View_Range_Available 1 "Valid" 0 "Invalid" ;
+VAL_ 1896 Model_Degree 3 "Three_Degree_Model" 2 "Parabolic_Model" 1 "Linear_Model" ;
+VAL_ 1896 Quality 3 "High_Quality" 2 "High_Quality" 1 "Low_Quality" 0 "Low_Quality" ;
+VAL_ 1896 Lane_Type 6 "Invalid" 5 "Botts_Dots" 4 "Double_Lane_Mark" 3 "Road_Edge" 2 "Undecied" 1 "Solid" 0 "Dashed" ;
+VAL_ 1895 View_Range_Available 1 "Valid" 0 "Invalid" ;
+VAL_ 1894 Model_Degree 3 "Three_Degree_Model" 2 "Parabolic_Model" 1 "Linear_Model" ;
+VAL_ 1894 Quality 3 "High_Quality" 2 "High_Quality" 1 "Low_Quality" 0 "Low_Quality" ;
+VAL_ 1894 Lane_Type 6 "Invalid" 5 "Botts_Dots" 4 "Double_Lane_Mark" 3 "Road_Edge" 2 "Undecied" 1 "Solid" 0 "Dashed" ;
+VAL_ 1887 Obstacle_Replaced 1 "Replaced" 0 "Not replaced" ;
+VAL_ 1886 Radar_Match_Confidence 5 "High match" 4 "Match3" 3 "Match2" 2 "Match1" 1 "Multi match" 0 "Not match" ;
+VAL_ 1886 CIPV_Flag 1 "CIPV" 0 "Not CIPV" ;
+VAL_ 1886 Obstacle_Lane 3 "Invalid signal" 2 "Next lane" 1 "Ego lane" 0 "Not assigned" ;
+VAL_ 1885 Obstacle_Valid 2 "Older valid" 1 "New valid" ;
+VAL_ 1885 Obstacle_Brake_Lights 1 "On" 0 "Off" ;
+VAL_ 1885 Obstacle_Status 5 "Parked" 4 "Oncoming" 3 "Moving" 2 "Stopped" 1 "Standing" 0 "Undefined" ;
+VAL_ 1885 Obstacle_Type 4 "Bicycle" 3 "Ped" 2 "Bike" 1 "Truck" 0 "Vehicle" ;
+VAL_ 1885 Cut_In_and_Out 4 "Cut out" 3 "Cut in" 2 "Out host line" 1 "In host line" 0 "Undefined" ;
+VAL_ 1885 Blinker_Info 4 "Both" 3 "Right" 2 "Left" 1 "Off" 0 "Unavaliable" ;
+VAL_ 1884 Obstacle_Replaced 1 "Replaced" 0 "Not replaced" ;
+VAL_ 1883 Radar_Match_Confidence 5 "High match" 4 "Match3" 3 "Match2" 2 "Match1" 1 "Multi match" 0 "Not match" ;
+VAL_ 1883 CIPV_Flag 1 "CIPV" 0 "Not CIPV" ;
+VAL_ 1883 Obstacle_Lane 3 "Invalid signal" 2 "Next lane" 1 "Ego lane" 0 "Not assigned" ;
+VAL_ 1882 Obstacle_Valid 2 "Older valid" 1 "New valid" ;
+VAL_ 1882 Obstacle_Brake_Lights 1 "On" 0 "Off" ;
+VAL_ 1882 Obstacle_Status 5 "Parked" 4 "Oncoming" 3 "Moving" 2 "Stopped" 1 "Standing" 0 "Undefined" ;
+VAL_ 1882 Obstacle_Type 4 "Bicycle" 3 "Ped" 2 "Bike" 1 "Truck" 0 "Vehicle" ;
+VAL_ 1882 Cut_In_and_Out 4 "Cut out" 3 "Cut in" 2 "Out host line" 1 "In host line" 0 "Undefined" ;
+VAL_ 1882 Blinker_Info 4 "Both" 3 "Right" 2 "Left" 1 "Off" 0 "Unavaliable" ;
+VAL_ 1881 Obstacle_Replaced 1 "Replaced" 0 "Not replaced" ;
+VAL_ 1880 Radar_Match_Confidence 5 "High match" 4 "Match3" 3 "Match2" 2 "Match1" 1 "Multi match" 0 "Not match" ;
+VAL_ 1880 CIPV_Flag 1 "CIPV" 0 "Not CIPV" ;
+VAL_ 1880 Obstacle_Lane 3 "Invalid signal" 2 "Next lane" 1 "Ego lane" 0 "Not assigned" ;
+VAL_ 1879 Obstacle_Valid 2 "Older valid" 1 "New valid" ;
+VAL_ 1879 Obstacle_Brake_Lights 1 "On" 0 "Off" ;
+VAL_ 1879 Obstacle_Status 5 "Parked" 4 "Oncoming" 3 "Moving" 2 "Stopped" 1 "Standing" 0 "Undefined" ;
+VAL_ 1879 Obstacle_Type 4 "Bicycle" 3 "Ped" 2 "Bike" 1 "Truck" 0 "Vehicle" ;
+VAL_ 1879 Cut_In_and_Out 4 "Cut out" 3 "Cut in" 2 "Out host line" 1 "In host line" 0 "Undefined" ;
+VAL_ 1879 Blinker_Info 4 "Both" 3 "Right" 2 "Left" 1 "Off" 0 "Unavaliable" ;
+VAL_ 1878 Obstacle_Replaced 1 "Replaced" 0 "Not replaced" ;
+VAL_ 1877 Radar_Match_Confidence 5 "High match" 4 "Match3" 3 "Match2" 2 "Match1" 1 "Multi match" 0 "Not match" ;
+VAL_ 1877 CIPV_Flag 1 "CIPV" 0 "Not CIPV" ;
+VAL_ 1877 Obstacle_Lane 3 "Invalid signal" 2 "Next lane" 1 "Ego lane" 0 "Not assigned" ;
+VAL_ 1876 Obstacle_Valid 2 "Older valid" 1 "New valid" ;
+VAL_ 1876 Obstacle_Brake_Lights 1 "On" 0 "Off" ;
+VAL_ 1876 Obstacle_Status 5 "Parked" 4 "Oncoming" 3 "Moving" 2 "Stopped" 1 "Standing" 0 "Undefined" ;
+VAL_ 1876 Obstacle_Type 4 "Bicycle" 3 "Ped" 2 "Bike" 1 "Truck" 0 "Vehicle" ;
+VAL_ 1876 Cut_In_and_Out 4 "Cut out" 3 "Cut in" 2 "Out host line" 1 "In host line" 0 "Undefined" ;
+VAL_ 1876 Blinker_Info 4 "Both" 3 "Right" 2 "Left" 1 "Off" 0 "Unavaliable" ;
+VAL_ 1875 Obstacle_Replaced 1 "Replaced" 0 "Not replaced" ;
+VAL_ 1874 Radar_Match_Confidence 5 "High match" 4 "Match3" 3 "Match2" 2 "Match1" 1 "Multi match" 0 "Not match" ;
+VAL_ 1874 CIPV_Flag 1 "CIPV" 0 "Not CIPV" ;
+VAL_ 1874 Obstacle_Lane 3 "Invalid signal" 2 "Next lane" 1 "Ego lane" 0 "Not assigned" ;
+VAL_ 1873 Obstacle_Valid 2 "Older valid" 1 "New valid" ;
+VAL_ 1873 Obstacle_Brake_Lights 1 "On" 0 "Off" ;
+VAL_ 1873 Obstacle_Status 5 "Parked" 4 "Oncoming" 3 "Moving" 2 "Stopped" 1 "Standing" 0 "Undefined" ;
+VAL_ 1873 Obstacle_Type 4 "Bicycle" 3 "Ped" 2 "Bike" 1 "Truck" 0 "Vehicle" ;
+VAL_ 1873 Cut_In_and_Out 4 "Cut out" 3 "Cut in" 2 "Out host line" 1 "In host line" 0 "Undefined" ;
+VAL_ 1873 Blinker_Info 4 "Both" 3 "Right" 2 "Left" 1 "Off" 0 "Unavaliable" ;
+VAL_ 1872 Obstacle_Replaced 1 "Replaced" 0 "Not replaced" ;
+VAL_ 1871 Radar_Match_Confidence 5 "High match" 4 "Match3" 3 "Match2" 2 "Match1" 1 "Multi match" 0 "Not match" ;
+VAL_ 1871 CIPV_Flag 1 "CIPV" 0 "Not CIPV" ;
+VAL_ 1871 Obstacle_Lane 3 "Invalid signal" 2 "Next lane" 1 "Ego lane" 0 "Not assigned" ;
+VAL_ 1870 Obstacle_Valid 2 "Older valid" 1 "New valid" ;
+VAL_ 1870 Obstacle_Brake_Lights 1 "On" 0 "Off" ;
+VAL_ 1870 Obstacle_Status 5 "Parked" 4 "Oncoming" 3 "Moving" 2 "Stopped" 1 "Standing" 0 "Undefined" ;
+VAL_ 1870 Obstacle_Type 4 "Bicycle" 3 "Ped" 2 "Bike" 1 "Truck" 0 "Vehicle" ;
+VAL_ 1870 Cut_In_and_Out 4 "Cut out" 3 "Cut in" 2 "Out host line" 1 "In host line" 0 "Undefined" ;
+VAL_ 1870 Blinker_Info 4 "Both" 3 "Right" 2 "Left" 1 "Off" 0 "Unavaliable" ;
+VAL_ 1869 Obstacle_Replaced 1 "Replaced" 0 "Not replaced" ;
+VAL_ 1868 Radar_Match_Confidence 5 "High match" 4 "Match3" 3 "Match2" 2 "Match1" 1 "Multi match" 0 "Not match" ;
+VAL_ 1868 CIPV_Flag 1 "CIPV" 0 "Not CIPV" ;
+VAL_ 1868 Obstacle_Lane 3 "Invalid signal" 2 "Next lane" 1 "Ego lane" 0 "Not assigned" ;
+VAL_ 1867 Obstacle_Valid 2 "Older valid" 1 "New valid" ;
+VAL_ 1867 Obstacle_Brake_Lights 1 "On" 0 "Off" ;
+VAL_ 1867 Obstacle_Status 5 "Parked" 4 "Oncoming" 3 "Moving" 2 "Stopped" 1 "Standing" 0 "Undefined" ;
+VAL_ 1867 Obstacle_Type 4 "Bicycle" 3 "Ped" 2 "Bike" 1 "Truck" 0 "Vehicle" ;
+VAL_ 1867 Cut_In_and_Out 4 "Cut out" 3 "Cut in" 2 "Out host line" 1 "In host line" 0 "Undefined" ;
+VAL_ 1867 Blinker_Info 4 "Both" 3 "Right" 2 "Left" 1 "Off" 0 "Unavaliable" ;
+VAL_ 1866 Obstacle_Replaced 1 "Replaced" 0 "Not replaced" ;
+VAL_ 1865 Radar_Match_Confidence 5 "High match" 4 "Match3" 3 "Match2" 2 "Match1" 1 "Multi match" 0 "Not match" ;
+VAL_ 1865 CIPV_Flag 1 "CIPV" 0 "Not CIPV" ;
+VAL_ 1865 Obstacle_Lane 3 "Invalid signal" 2 "Next lane" 1 "Ego lane" 0 "Not assigned" ;
+VAL_ 1864 Obstacle_Valid 2 "Older valid" 1 "New valid" ;
+VAL_ 1864 Obstacle_Brake_Lights 1 "On" 0 "Off" ;
+VAL_ 1864 Obstacle_Status 5 "Parked" 4 "Oncoming" 3 "Moving" 2 "Stopped" 1 "Standing" 0 "Undefined" ;
+VAL_ 1864 Obstacle_Type 4 "Bicycle" 3 "Ped" 2 "Bike" 1 "Truck" 0 "Vehicle" ;
+VAL_ 1864 Cut_In_and_Out 4 "Cut out" 3 "Cut in" 2 "Out host line" 1 "In host line" 0 "Undefined" ;
+VAL_ 1864 Blinker_Info 4 "Both" 3 "Right" 2 "Left" 1 "Off" 0 "Unavaliable" ;
+VAL_ 1863 Obstacle_Replaced 1 "Replaced" 0 "Not replaced" ;
+VAL_ 1862 Radar_Match_Confidence 5 "High match" 4 "Match3" 3 "Match2" 2 "Match1" 1 "Multi match" 0 "Not match" ;
+VAL_ 1862 CIPV_Flag 1 "CIPV" 0 "Not CIPV" ;
+VAL_ 1862 Obstacle_Lane 3 "Invalid signal" 2 "Next lane" 1 "Ego lane" 0 "Not assigned" ;
+VAL_ 1861 Obstacle_Valid 2 "Older valid" 1 "New valid" ;
+VAL_ 1861 Obstacle_Brake_Lights 1 "On" 0 "Off" ;
+VAL_ 1861 Obstacle_Status 5 "Parked" 4 "Oncoming" 3 "Moving" 2 "Stopped" 1 "Standing" 0 "Undefined" ;
+VAL_ 1861 Obstacle_Type 4 "Bicycle" 3 "Ped" 2 "Bike" 1 "Truck" 0 "Vehicle" ;
+VAL_ 1861 Cut_In_and_Out 4 "Cut out" 3 "Cut in" 2 "Out host line" 1 "In host line" 0 "Undefined" ;
+VAL_ 1861 Blinker_Info 4 "Both" 3 "Right" 2 "Left" 1 "Off" 0 "Unavaliable" ;
+VAL_ 1860 Obstacle_Replaced 1 "Replaced" 0 "Not replaced" ;
+VAL_ 1859 Radar_Match_Confidence 5 "High match" 4 "Match3" 3 "Match2" 2 "Match1" 1 "Multi match" 0 "Not match" ;
+VAL_ 1859 CIPV_Flag 1 "CIPV" 0 "Not CIPV" ;
+VAL_ 1859 Obstacle_Lane 3 "Invalid signal" 2 "Next lane" 1 "Ego lane" 0 "Not assigned" ;
+VAL_ 1858 Obstacle_Valid 2 "Older valid" 1 "New valid" ;
+VAL_ 1858 Obstacle_Brake_Lights 1 "On" 0 "Off" ;
+VAL_ 1858 Obstacle_Status 5 "Parked" 4 "Oncoming" 3 "Moving" 2 "Stopped" 1 "Standing" 0 "Undefined" ;
+VAL_ 1858 Obstacle_Type 4 "Bicycle" 3 "Ped" 2 "Bike" 1 "Truck" 0 "Vehicle" ;
+VAL_ 1858 Cut_In_and_Out 4 "Cut out" 3 "Cut in" 2 "Out host line" 1 "In host line" 0 "Undefined" ;
+VAL_ 1858 Blinker_Info 4 "Both" 3 "Right" 2 "Left" 1 "Off" 0 "Unavaliable" ;
+VAL_ 1857 Obstacle_Replaced 1 "Replaced" 0 "Not replaced" ;
+VAL_ 1856 Radar_Match_Confidence 5 "High match" 4 "Match3" 3 "Match2" 2 "Match1" 1 "Multi match" 0 "Not match" ;
+VAL_ 1856 CIPV_Flag 1 "CIPV" 0 "Not CIPV" ;
+VAL_ 1856 Obstacle_Lane 3 "Invalid signal" 2 "Next lane" 1 "Ego lane" 0 "Not assigned" ;
+VAL_ 1855 Obstacle_Valid 2 "Older valid" 1 "New valid" ;
+VAL_ 1855 Obstacle_Brake_Lights 1 "On" 0 "Off" ;
+VAL_ 1855 Obstacle_Status 5 "Parked" 4 "Oncoming" 3 "Moving" 2 "Stopped" 1 "Standing" 0 "Undefined" ;
+VAL_ 1855 Obstacle_Type 4 "Bicycle" 3 "Ped" 2 "Bike" 1 "Truck" 0 "Vehicle" ;
+VAL_ 1855 Cut_In_and_Out 4 "Cut out" 3 "Cut in" 2 "Out host line" 1 "In host line" 0 "Undefined" ;
+VAL_ 1855 Blinker_Info 4 "Both" 3 "Right" 2 "Left" 1 "Off" 0 "Unavaliable" ;
+VAL_ 1854 Obstacle_Replaced 1 "Replaced" 0 "Not replaced" ;
+VAL_ 1853 Radar_Match_Confidence 5 "High match" 4 "Match3" 3 "Match2" 2 "Match1" 1 "Multi match" 0 "Not match" ;
+VAL_ 1853 CIPV_Flag 1 "CIPV" 0 "Not CIPV" ;
+VAL_ 1853 Obstacle_Lane 3 "Invalid signal" 2 "Next lane" 1 "Ego lane" 0 "Not assigned" ;
+VAL_ 1852 Obstacle_Valid 2 "Older valid" 1 "New valid" ;
+VAL_ 1852 Obstacle_Brake_Lights 1 "On" 0 "Off" ;
+VAL_ 1852 Obstacle_Status 5 "Parked" 4 "Oncoming" 3 "Moving" 2 "Stopped" 1 "Standing" 0 "Undefined" ;
+VAL_ 1852 Obstacle_Type 4 "Bicycle" 3 "Ped" 2 "Bike" 1 "Truck" 0 "Vehicle" ;
+VAL_ 1852 Cut_In_and_Out 4 "Cut out" 3 "Cut in" 2 "Out host line" 1 "In host line" 0 "Undefined" ;
+VAL_ 1852 Blinker_Info 4 "Both" 3 "Right" 2 "Left" 1 "Off" 0 "Unavaliable" ;
+VAL_ 1792 Right_LDW_On 1 "True" 0 "False" ;
+VAL_ 1792 Tamper_Alert 1 "True" 0 "False" ;
+VAL_ 1792 TSR_Warning_Level 7 "Level7" 6 "Level6" 5 "Level5" 4 "Level4" 3 "Level3" 2 "Level2" 1 "Level1" 0 "Level0" ;
+VAL_ 1792 Headway_Warning_Level 2 "Level2" 1 "Level1" 0 "Level0" ;
+VAL_ 1792 HW_Repeatable_Enable 1 "True" 0 "False" ;
+VAL_ 1792 TSR_Enabled 1 "True" 0 "False" ;
+VAL_ 1792 FCW_On 1 "True" 0 "False" ;
+VAL_ 1792 Failsafe 1 "True" 0 "False" ;
+VAL_ 1792 Maintenance 1 "True" 0 "False" ;
+VAL_ 1792 Left_LDW_On 1 "True" 0 "False" ;
+VAL_ 1792 LDW_Off 1 "True" 0 "False" ;
+VAL_ 1792 Error_Valid 1 "No Error" 0 "Error" ;
+VAL_ 1792 Peds_FCW 1 "True" 0 "False" ;
+VAL_ 1792 Peds_in_DZ 1 "True" 0 "False" ;
+VAL_ 1792 Headway_Valid 1 "True" 0 "False" ;
+VAL_ 1792 Zero_Speed 1 "True" 0 "False" ;
+VAL_ 1792 Time_Indicator 2 "Night" 1 "Dusk" 0 "Day" ;
+VAL_ 1792 Sound_Type 6 "FCW and PCW" 5 "UFCW" 4 "TSR" 3 "HW1" 2 "LDW Right" 1 "LDW Left" 0 "Silent" ;
+VAL_ 1851 Obstacle_Replaced 1 "Replaced" 0 "Not replaced" ;
+VAL_ 1850 Radar_Match_Confidence 5 "High match" 4 "Match3" 3 "Match2" 2 "Match1" 1 "Multi match" 0 "Not match" ;
+VAL_ 1850 CIPV_Flag 1 "CIPV" 0 "Not CIPV" ;
+VAL_ 1850 Obstacle_Lane 3 "Invalid signal" 2 "Next lane" 1 "Ego lane" 0 "Not assigned" ;
+VAL_ 1849 Obstacle_Valid 2 "Older valid" 1 "New valid" ;
+VAL_ 1849 Obstacle_Brake_Lights 1 "On" 0 "Off" ;
+VAL_ 1849 Obstacle_Status 5 "Parked" 4 "Oncoming" 3 "Moving" 2 "Stopped" 1 "Standing" 0 "Undefined" ;
+VAL_ 1849 Obstacle_Type 4 "Bicycle" 3 "Ped" 2 "Bike" 1 "Truck" 0 "Vehicle" ;
+VAL_ 1849 Cut_In_and_Out 4 "Cut out" 3 "Cut in" 2 "Out host line" 1 "In host line" 0 "Undefined" ;
+VAL_ 1849 Blinker_Info 4 "Both" 3 "Right" 2 "Left" 1 "Off" 0 "Unavaliable" ;
+VAL_ 1848 Failsafe 2 "Blur Image" 1 "Low sun" 0 "No failsafe" ;
+VAL_ 1848 Close_Car 1 "Close car exists" 0 "No close car" ;
+VAL_ 1848 Go 15 "Not calculated" 3 "Driver decision is required" 2 "Undecided" 1 "Go" 0 "Stop" ;
+VAL_ 1848 Right_Close_Rang_Cut_In 1 "True" 0 "False" ;
+VAL_ 1848 Left_Close_Rang_Cut_In 1 "True" 0 "False" ;
+VAL_ 1847 Left_LDW_Availability 1 "Available" 0 "Unavailable" ;
+VAL_ 1847 Right_LDW_Availability 1 "Available" 0 "Unavailable" ;
+VAL_ 1847 Construction_Area 1 "True" 0 "False" ;
+

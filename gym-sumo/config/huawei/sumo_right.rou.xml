@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on Fri Feb 15 13:26:54 2019 by Eclipse SUMO duarouter Version 1.1.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/duarouterConfiguration.xsd">
+
+    <input>
+        <net-file value="/home/edwardchaos/Sumo/2019-02-15-13-26-51/osm.net.xml"/>
+        <route-files value="/home/edwardchaos/Sumo/2019-02-15-13-26-51/osm.passenger.trips.xml"/>
+    </input>
+
+    <output>
+        <output-file value="/home/edwardchaos/Sumo/2019-02-15-13-26-51/osm.passenger.rou.xml"/>
+        <alternatives-output value="/home/edwardchaos/Sumo/2019-02-15-13-26-51/osm.passenger.rou.alt.xml"/>
+    </output>
+
+    <time>
+        <begin value="0"/>
+        <end value="3600.0"/>
+    </time>
+
+    <report>
+        <no-warnings value="true"/>
+        <ignore-errors value="true"/>
+        <no-step-log value="true"/>
+    </report>
+
+</configuration>
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    
+    <vType id="veh_passenger" color="cyan" laneChangeModel="DK2008" vClass="passenger"/>
+    <vType id="person" vClass="pedestrian"/>
+    <vType id="veh_pass" accel="4" decel="4" minGap="1" emergencyDecel="5" laneChangeModel="DK2008" carFollowModel="IDM" vClass="passenger"/>
+    <vType id="veh_truck" accel="1.5" decel="3" minGap="5" emergencyDecel="5" laneChangeModel="DK2008" carFollowModel="ACC" vClass="truck"/>
+    <vType id="veh_bus" accel="1.8" decel="3" minGap="2" emergencyDecel="5" laneChangeModel="DK2008"  carFollowModel="IDM" vClass="bus"/>
+    <vType id="veh_taxi" accel="4" decel="4" minGap="4.5" emergencyDecel="5" laneChangeModel="DK2008" carFollowModel="BKerner" vClass="taxi"/>
+
+
+    <route id="1" edges="10110018 10110016 10110010 10110013 10110071 10110000 10110001 10110003 10110008 10110007 10110028 10110029 10110038 10110049 10110051 10110050 10110052 10110054 10110055 10110062 10110061 10110057 10110060 10110058 10110059 10110047 10110036 10110037 10110019 10110020 10110021 10110023" />
+
+    <route id="2" edges="10110060 10110056 10110033 10110030" />
+    <route id="3" edges="10110059 10110056 10110033" />
+
+    <route id="ns1" edges="10110018 10110022 10110048 10110057"/>
+    <route id="ns2" edges="10110013 10110011 10110032 10110055"/>
+    <route id="ns3" edges="10110001 10110007 10110038 10110050"/>
+    <route id="we1" edges="10110021 10110016 10110071 10110003"/>
+    <route id="we2" edges="10110037 10110034 10110030 10110028"/>
+    <route id="we3" edges="10110059 10110056 10110053 10110049"/>
+    <route id="sn1" edges="10110060 10110047 10110019 10110023"/>
+    <route id="sn2" edges="10110062 10110033 10110012 10110010"/>
+    <route id="sn3" edges="10110052 10110039 10110006 10110000"/>
+    <route id="ew1" edges="10110008 10110009 10110017 10110020"/>
+    <route id="ew2" edges="10110029 10110031 10110073 10110036"/>
+    <route id="ew3" edges="10110051 10110054 10110061 10110058"/>
+
+
+
+
+    <!--route id="r1" edges="10110018 10110016 10110011 10110030 10110038 10110054 10110033 10110073 10110048 10110056 10110055"/>
+    <route id="r2" edges="10110062 10110061 10110047 10110034 10110032 10110053 10110039 10110031 10110012 10110071 10110000"/>
+    <route id="r3" edges="10110008 10110007 10110031 10110032 10110061 10110057"/>
+    <route id="r4" edges="10110021 10110022 10110034 10110012 10110071 10110007 10110028"/>
+    <route id="r5" edges="10110052 10110054 10110033 10110030 10110006 10110009 10110011 10110073 10110019 10110016 10110010"/>
+    <route id="r6" edges="10110060 10110056 10110033 10110012 10110017 10110022 10110036"/>
+    <route id="r7" edges="10110013 10110071 10110007 10110038 10110049"/>
+    <route id="r8" edges="10110013 10110017 10110023"/>
+    <route id="r9" edges="10110001 10110009 10110010"/>
+    <route id="r10" edges="10110037 10110019 10110020"/>
+    <route id="r11" edges="10110029 10110038 10110054 10110055"/>
+    <route id="r12" edges="10110029 10110006 10110003"/>
+    <route id="r13" edges="10110059 10110047 10110019 10110023"/>
+    <route id="r14" edges="10110059 10110057"/>
+    <route id="r15" edges="10110062 10110053 10110039 10110028"/>
+    <route id="r16" edges="10110051 10110039 10110028"/>
+    <route id="r17" edges="10110018 10110020"/>
+    <route id="r18" edges="10110021 10110023"/>
+    <route id="r19" edges="10110008 10110000"/>
+    <route id="r20" edges="10110001 10110003"/>
+    <route id="r21" edges="10110059 10110047 10110036"/>
+    <route id="r22" edges="10110060 10110058"/>
+    <route id="r23" edges="10110037 10110048 10110058"/>
+    <route id="r24" edges="10110052 10110049"/>
+    <route id="r25" edges="10110051 10110050"/>
+    <route id="r26" edges="10110062 10110053 10110050"/-->
+    <route id="r27" edges="10110073 10110036"/>
+    <route id="r28" edges="10110073 10110019"/>
+    <route id="r29" edges="10110022 10110048"/>
+    <route id="r30" edges="10110073 10110048"/>
+    <route id="r31" edges="10110047 10110036"/>
+    <route id="r32" edges="10110047 10110034"/>
+    <route id="r33" edges="10110022 10110036"/>
+    <route id="r34" edges="10110022 10110034"/>
+
+
+    <route id="left" edges="10110037 10110019"/>
+    <route id="mid" edges="10110037 10110034"/>
+    <route id="right" edges="10110037 10110048"/>
+
+
+    <!--<flow id="1" route='1' color="1,1,0" begin="0" end="7200" period="5" type="veh_passenger"/>
+    <flow id="2" route='2' color="1,1,0" begin="0" end="7200" period="5" type="veh_passenger"/>-->
+
+   
+    <flow id="3" route="ns1" color="yellow" begin="0" end="3153600000" probability="0.005" type="veh_pass"/>
+    <!--flow id="4" route="ns2" color="yellow" begin="0" end="3153600000" probability="0.01" type="veh_pass"/>
+    <flow id="5" route="ns3" color="yellow" begin="0" end="3153600000" probability="0.01" type="veh_pass"/-->
+    <!--flow id="6" route="we1" color="yellow" begin="0" end="3153600000" probability="0.01" type="veh_pass"/-->
+    <flow id="7" route="we2" color="yellow" begin="0" end="3153600000" probability="0.001" type="veh_pass"/>
+    <!--flow id="8" route="we3" color="yellow" begin="0" end="3153600000" probability="0.01" type="veh_pass"/-->
+    <flow id="9" route="sn1" color="yellow" begin="0" end="3153600000" probability="0.005" type="veh_pass"/>
+    <!--flow id="10" route="sn2" color="yellow" begin="0" end="3153600000" probability="0.01" type="veh_pass"/>
+    <flow id="11" route="sn3" color="yellow" begin="0" end="3153600000" probability="0.01" type="veh_pass"/-->
+    <flow id="13" route="ew2" color="yellow" begin="0" end="3153600000" probability="0.005" type="veh_pass"/>
+    <!--flow id="14" route="ew3" color="yellow" begin="0" end="3153600000" probability="0.01" type="veh_pass"/-->
+
+    
+
+    <flow id="15" route="ns1" color="yellow" begin="0" end="3153600000" probability="0.005" type="veh_pass"/>
+    <!--flow id="16" route="ns2" color="yellow" begin="0" end="3153600000" probability="0.01" type="veh_pass"/>
+    <flow id="17" route="ns3" color="yellow" begin="0" end="3153600000" probability="0.01" type="veh_pass"/>
+    <flow id="18" route="we1" color="yellow" begin="0" end="3153600000" probability="0.01" type="veh_pass"/-->
+    <flow id="19" route="we2" color="yellow" begin="0" end="3153600000" probability="0.001" type="veh_pass"/>
+    <!--flow id="20" route="we3" color="yellow" begin="0" end="3153600000" probability="0.01" type="veh_pass"/-->
+    <flow id="21" route="sn1" color="yellow" begin="0" end="3153600000" probability="0.005" type="veh_pass"/>
+    <!--flow id="22" route="sn2" color="yellow" begin="0" end="3153600000" probability="0.01" type="veh_pass"/>
+    <flow id="23" route="sn3" color="yellow" begin="0" end="3153600000" probability="0.01" type="veh_pass"/>
+    <flow id="24" route="ew1" color="yellow" begin="0" end="3153600000" probability="0.01" type="veh_pass"/-->
+    <flow id="25" route="ew2" color="yellow" begin="0" end="3153600000" probability="0.005" type="veh_pass"/>
+    <!--flow id="26" route="ew3" color="yellow" begin="0" end="3153600000" probability="0.01" type="veh_pass"/-->
+
+  
+
+
+
+<!--    <flow id="27" begin="0" end="3153600000" period="90" from="10110021" to="10110050" type="veh_bus"/>
+    <flow id="28" begin="0" end="3153600000" period="90" from="10110058" to="10110003" type="veh_truck"/>  
+    <flow id="29" begin="0" end="3153600000" period="90" from="10110037" to="10110000" type="veh_taxi"/> 
+    <flow id="30" begin="0" end="3153600000" period="45" from="10110013" to="10110049" type="veh_bus"/>   
+    <flow id="31" begin="0" end="3153600000" period="45" from="10110051" to="10110036" type="veh_pass"/>
+    <flow id="32" begin="0" end="3153600000" period="45" from="10110018" to="10110028" type="veh_pass"/>
+    <flow id="33" begin="0" end="3153600000" period="45" from="10110037" to="10110050" type="veh_bus"/>
+    <flow id="34" begin="0" end="3153600000" period="45" from="10110060" to="10110000" type="veh_truck"/>   
+    <flow id="29" route="r2d2" color="yellow" begin="0" end="3153600000" period="70" type="veh_pass"/> 
+    <flow id="30" route="l2d2" color="yellow" begin="0" end="3153600000" period="70" type="veh_pass"/>    
+    <flow id="31" route="rudl" color="yellow" begin="0" end="3153600000" period="70" type="veh_pass"/>    
+    <flow id="32" route="urld" color="yellow" begin="0" end="3153600000" period="70" type="veh_truck"/>
+    <flow id="33" route="ulrd" color="yellow" begin="0" end="3153600000" period="70" type="veh_truck"/>
+    <flow id="34" route="ludr" color="yellow" begin="0" end="3153600000" period="70" type="veh_truck"/>
+    <flow id="35" route="right" begin="0" end="3153600000" period="50" color="yellow" type="veh_truck"/>   -->
+
+
+    <!--flow id="27" route="r1" color="yellow" begin="0" end="3153600000" probability="0.005" type="veh_pass"/>
+    <flow id="28" route="r2" color="yellow" begin="0" end="3153600000" probability="0.003" type="veh_pass"/>
+    <flow id="29" route="r3" color="yellow" begin="0" end="3153600000" probability="0.01" type="veh_pass"/>
+    <flow id="30" route="r4" color="yellow" begin="0" end="3153600000" period="200" type="veh_pass"/>
+    <flow id="31" route="r5" color="yellow" begin="0" end="3153600000" probability="0.004" type="veh_pass"/>
+    <flow id="32" route="r6" color="yellow" begin="0" end="3153600000" period="80" type="veh_pass"/>
+    <flow id="33" route="r7" color="yellow" begin="0" end="3153600000" period="80" type="veh_pass"/>
+    <flow id="34" route="r8" color="yellow" begin="0" end="3153600000" period="80" type="veh_pass"/>
+    <flow id="35" route="r9" color="yellow" begin="0" end="3153600000" period="80" type="veh_pass"/>
+    <flow id="36" route="r10" color="yellow" begin="0" end="3153600000" probability="0.005" type="veh_pass"/>
+    <flow id="37" route="r11" color="yellow" begin="0" end="3153600000" period="80" type="veh_pass"/>
+    <flow id="38" route="r12" color="yellow" begin="0" end="3153600000" period="80" type="veh_pass"/>
+    <flow id="39" route="r13" color="yellow" begin="0" end="3153600000" probability="0.005" type="veh_pass"/>
+    <flow id="40" route="r14" color="yellow" begin="0" end="3153600000" period="80" type="veh_pass"/>
+    <flow id="41" route="r15" color="yellow" begin="0" end="3153600000" probability="0.005" type="veh_pass"/>
+    <flow id="42" route="r16" color="yellow" begin="0" end="3153600000" period="80" type="veh_pass"/>
+    <flow id="43" route="r17" color="yellow" begin="0" end="3153600000" period="80" type="veh_pass"/>
+    <flow id="44" route="r18" color="yellow" begin="0" end="3153600000" period="80" type="veh_pass"/>
+    <flow id="45" route="r19" color="yellow" begin="0" end="3153600000" period="80" type="veh_pass"/>
+    <flow id="46" route="r20" color="yellow" begin="0" end="3153600000" period="80" type="veh_pass"/>
+    <flow id="47" route="r21" color="yellow" begin="0" end="3153600000" probability="0.005" type="veh_pass"/>
+    <flow id="48" route="r22" color="yellow" begin="0" end="3153600000" probability="0.005" type="veh_pass"/>
+    <flow id="49" route="r23" color="yellow" begin="0" end="3153600000" probability="0.005" type="veh_pass"/>
+    <flow id="50" route="r24" color="yellow" begin="0" end="3153600000" probability="0.005" type="veh_pass"/>
+    <flow id="51" route="r25" color="yellow" begin="0" end="3153600000" probability="0.005" type="veh_pass"/>
+    <flow id="52" route="r26" color="yellow" begin="0" end="3153600000" probability="0.005" type="veh_pass"/-->
+
+    <flow id="53" route="r27" color="yellow" begin="0" end="3153600000" probability="0.02" type="veh_pass"/>
+    <flow id="54" route="r28" color="yellow" begin="0" end="3153600000" probability="0.02" type="veh_pass"/>
+    <flow id="55" route="r29" color="yellow" begin="0" end="3153600000" probability="0.16" type="veh_pass"/>
+    <flow id="56" route="r30" color="yellow" begin="0" end="3153600000" probability="0.16" type="veh_pass"/>
+    <flow id="57" route="r31" color="yellow" begin="0" end="3153600000" probability="0.02" type="veh_pass"/>
+    <flow id="58" route="r32" color="yellow" begin="0" end="3153600000" probability="0.02" type="veh_pass"/>
+    <flow id="59" route="r33" color="yellow" begin="0" end="3153600000" probability="0.01" type="veh_pass"/>
+    <flow id="60" route="r34" color="yellow" begin="0" end="3153600000" probability="0.02" type="veh_pass"/>
+    <flow id="61" route="right" color="yellow" begin="0" end="3153600000" probability="0.01" type="veh_pass"/>
+    <!--<flow id="53" begin="0" end="3153600000" number="1" route="test" color="cyan" type="veh_passenger"/> -->  
+
+    <!--<vehicle id="21" type="veh_passenger" route="loop1" color="cyan" depart="0"/>-->
+
+
+</routes>
