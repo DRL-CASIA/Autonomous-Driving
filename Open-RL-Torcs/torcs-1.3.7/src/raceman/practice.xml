@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	 file        : practice.xml
+	 created     : Sun Jan  5 11:52:32 CET 2003
+	 copyright   : (C) 2003-2014 by Eric Espie, Bernhard Wymann                         
+	 email       : Eric.Espie@torcs.org   
+	 version     : $Id: practice.xml,v 1.7.2.4 2014/04/12 13:55:33 berniw Exp $                                  
+	 -->
+
+<!--    This program is free software; you can redistribute it and/or modify  -->
+<!--    it under the terms of the GNU General Public License as published by  -->
+<!--    the Free Software Foundation; either version 2 of the License, or     -->
+<!--    (at your option) any later version.                                   -->
+
+<!DOCTYPE params SYSTEM "../libs/tgf/params.dtd">
+
+<params name="practice" type="param" mode="mw">
+	
+	<section name="Header">
+		<attstr name="name" val="Practice"/>
+		<attstr name="description" val="Practice"/>
+		<attnum name="priority" val="100"/>
+		<attstr name="menu image" val="data/img/splash-practice.png"/>
+		<attstr name="run image" val="data/img/splash-run-practice.png"/>
+	</section>
+	
+	<section name="Tracks">
+		<attnum name="maximum number" val="1"/>
+		
+		<section name="1">
+			<attstr name="name" val="chenyi-g-track-3"/>
+			<attstr name="category" val="road"/>
+		</section>
+	</section>
+	
+	<section name="Races">
+		
+		<section name="1">
+			<attstr name="name" val="Practice"/>
+		</section>
+	</section>
+	
+	<section name="Practice">
+		<attnum name="laps" val="20"/>
+		<attstr name="type" val="practice"/>
+		<attstr name="starting order" val="drivers list"/>
+		<attstr name="restart" val="yes"/>
+		<attstr name="display mode" val="normal"/>
+		<attstr name="display results" val="yes"/>
+
+		<attstr name="invalidate best lap on wall touch" val="yes"/>
+		<attstr name="invalidate best lap on corner cutting" val="yes"/>
+		<attstr name="corner cutting time penalty" val="yes"/>
+		<attnum name="fuel consumption factor" min="0.0" max="5.0" val="1.0"/>
+		<attnum name="damage factor" min="0.0" max="5.0" val="1.0"/>
+
+		<section name="Starting Grid">
+			<attnum name="rows"                      val="1"/>
+			<attnum name="distance to start"         val="100"/>
+			<attnum name="distance between columns"  val="20"/>
+			<attnum name="offset within a column"    val="10"/>
+			<attnum name="initial speed" unit="km/h" val="0"/>
+			<attnum name="initial height" unit="m"   val="0.2"/>
+		</section>
+	</section>
+	
+	<section name="Drivers">
+		<attnum name="maximum number" val="1"/>
+		<attstr name="focused module" val="drl_bot"/>
+		<attnum name="focused idx" val="1"/>
+		<!-- drl_bot -->
+		<!-- pid_bot -->
+		<!-- lqr_bot -->
+		
+		<section name="1">
+			<attnum name="idx" val="1"/>
+			<attstr name="module" val="drl_bot"/> <!-- inferno -->
+		</section>
+	</section>
+	
+	<section name="Configuration">
+		
+		<section name="1">
+			<attstr name="type" val="track select"/>
+		</section>
+		
+		<section name="2">
+			<attstr name="type" val="drivers select"/>
+		</section>
+		
+		<section name="3">
+			<attstr name="type" val="race config"/>
+			<attstr name="race" val="Practice"/>
+			
+			<section name="Options">
+				
+				<section name="1">
+					<attstr name="type" val="race length"/>
+				</section>
+				
+				<section name="2">
+					<attstr name="type" val="display mode"/>
+				</section>
+			</section>
+		</section>
+	</section>
+	
+</params>
