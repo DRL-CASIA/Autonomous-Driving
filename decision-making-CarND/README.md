@@ -13,8 +13,8 @@
 
 环境配置步骤：
 
-1. `git clone https://github.com/DRL-CASIA/decision-making-CarND.git` （有文件更新，建议重新克隆）
-2. `cd decision-making-CarND/term3_sim_linux`
+1. `git clone https://github.com/DRL-CASIA/Autonomous-Driving.git`
+2. `cd Autonomous-Driving/decision-making-CarND/term3_sim_linux`
 3. `sudo chmod u+x term3_sim.x86_64`
 4. 确保cmake >= 3.5，make >= 4.1，gcc/g++ >= 5.4（一般都已安装，未安装参考decision-making-CarND/CarND-test/README.md）
 5. 进入`decision-making-CarND/CarND-test`文件夹，运行install-ubuntu.sh安装依赖（`bash install-ubuntu.sh`）
