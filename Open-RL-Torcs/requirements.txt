@@ -20,4 +20,4 @@ sysv-ipc==1.0.1
 tensorboard==1.11.0
 tensorflow==1.15.2
 termcolor==1.1.0
-Werkzeug==1.0.1
+Werkzeug==2.2.3
