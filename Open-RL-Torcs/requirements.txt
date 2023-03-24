@@ -18,6 +18,6 @@ protobuf==3.11.3
 six==1.14.0
 sysv-ipc==1.0.1
 tensorboard==1.11.0
-tensorflow==1.15.2
+tensorflow==2.11.1
 termcolor==1.1.0
 Werkzeug==1.0.1
